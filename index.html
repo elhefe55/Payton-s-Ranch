@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payton's Ranch Dream | Michigan Roadmap</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --earth-brown: #5C4033;
+            --sage-green: #87a878;
+            --deep-forest: #2d3b26;
+            --cream: #FAF9F6;
+            --white: #ffffff;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--earth-brown);
+            background-color: var(--cream);
+        }
+
+        /* PERSISTENT NAVIGATION */
+        nav {
+            background: var(--deep-forest);
+            padding: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sage-green);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-text h2 {
+            font-size: 2.2rem;
+            color: var(--deep-forest);
+            margin-bottom: 1rem;
+        }
+
+        /* GRID CARDS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-top: 5px solid var(--sage-green);
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .card h3 { color: var(--deep-forest); margin-bottom: 1rem; }
+        .card p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+        .card-link {
+            text-decoration: none;
+            background: var(--earth-brown);
+            color: white;
+            padding: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep-forest);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; }
+        .footer-col ul li a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-col ul li a:hover { opacity: 1; color: var(--white); }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="education.html">Education & TIP</a>
+        <a href="working-ranch.html">Working Ranch</a>
+        <a href="resources.html">Resources</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Payton's Ranch Dream</h1>
+        <p>Your Michigan Guide to a Life on the Land</p>
+    </header>
+
+    <main class="container">
+        <section class="intro-text">
+            <h2>The Vision</h2>
+            <p>From riding horses to managing land, your journey requires a plan. Use this guide to navigate your education, gain your first years of experience, and build your future in Michigan's ranching industry.</p>
+        </section>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <span class="card-icon">🗺️</span>
+                    <h3>The Roadmap</h3>
+                    <p>A 10-year strategy taking you from age 17 to a professional ranch career.</p>
+                </div>
+                <a href="roadmap.html" class="card-link">See the Timeline</a>
+            </div>
+
+            <div class="card" style="border-top-color: var(--earth-brown);">
+                <div>
+                    <span class="card-icon">🎓</span>
+                    <h3>Education & TIP</h3>
+                    <p>How to use your Michigan Tuition Incentive Program (TIP) for college.</p>
+                </div>
+                <a href="education.html" class="card-link">View Colleges</a>
+            </div>
+
+            <div class="card" style="border-top-color: var(--deep-forest);">
+                <div>
+                    <span class="card-icon">🐎</span>
+                    <h3>Working Ranch</h3>
+                    <p>How to find your first job and build skills with minimal experience.</p>
+                </div>
+                <a href="working-ranch.html" class="card-link">Start Working</a>
+            </div>
+
+            <div class="card" style="border-top-color: var(--gold);">
+                <div>
+                    <span class="card-icon">🛠️</span>
+                    <h3>Resource Hub</h3>
+                    <p>Direct links to USDA loans, Michigan Farm Bureau, and job boards.</p>
+                </div>
+                <a href="resources.html" class="card-link">Open Toolbox</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Site Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">The 10-Year Roadmap</a></li>
+                    <li><a href="education.html">Education & TIP</a></li>
+                    <li><a href="working-ranch.html">Working Ranch Experience</a></li>
+                    <li><a href="resources.html">Resource Toolbox</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Michigan Shortcuts</h4>
+                <ul>
+                    <li><a href="https://www.canr.msu.edu/horse_extension/" target="_blank">MSU Horse Extension</a></li>
+                    <li><a href="https://www.michfb.com/" target="_blank">MI Farm Bureau</a></li>
+                    <li><a href="https://www.michigan.gov/mistudentaid" target="_blank">TIP Scholarship Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>The Goal</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">To provide Payton with the strategic advantage needed to turn a passion for horses into a sustainable ranching legacy.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Created for Payton's Journey. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

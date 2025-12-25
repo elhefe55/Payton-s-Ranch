@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Steps | Payton's Ranch Dream</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --earth-brown: #5C4033;
+            --sage-green: #87a878;
+            --deep-forest: #2d3b26;
+            --cream: #FAF9F6;
+            --white: #ffffff;
+            --gold: #D4AF37;
+            --light-tan: #f2ede4;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--earth-brown);
+            background-color: var(--cream);
+        }
+
+        /* PERSISTENT NAVIGATION (Matches Homepage) */
+        nav {
+            background: var(--deep-forest);
+            padding: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--sage-green); }
+
+        /* HEADER AREA */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        header h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        header p { font-style: italic; font-size: 1.2rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* SECTION STYLING */
+        .intro-section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-left: 5px solid var(--sage-green);
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-section { margin-bottom: 5rem; }
+        
+        .timeline-header {
+            background: var(--deep-forest);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+
+        /* ACTION ITEMS */
+        .action-item {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .action-item:last-child { border-bottom: none; }
+
+        .action-item h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--deep-forest);
+            margin-bottom: 1rem;
+        }
+
+        .priority {
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .priority-high { background: #ffebee; color: #c62828; }
+        .priority-medium { background: #fff3e0; color: #ef6c00; }
+
+        .action-steps {
+            background: var(--light-tan);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+
+        .action-steps ul { margin-left: 1.5rem; font-size: 0.95rem; }
+
+        /* CHECKLIST BOX */
+        .checklist-box {
+            background: #fdfcf0;
+            border: 2px dashed var(--sage-green);
+            padding: 3rem;
+            margin-top: 4rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        /* FOOTER (Exact match to home/resources) */
+        footer {
+            background: var(--deep-forest);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; }
+        .footer-col ul li a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="education.html">Education & TIP</a>
+        <a href="working-ranch.html">Working Ranch</a>
+        <a href="resources.html">Resources</a>
+    </nav>
+
+    <header>
+        <h1>Your Next Steps</h1>
+        <p>The immediate path forward for Payton’s Ranch Legacy</p>
+    </header>
+
+    <div class="container">
+        <section class="intro-section">
+            <h2>Let's Get Started</h2>
+            <p>Payton, you don't need to wait until graduation to start your journey. Here are the concrete actions you can take <strong>right now</strong> to build momentum.</p>
+        </section>
+
+        <div class="timeline-section">
+            <div class="timeline-header">
+                <h2>📅 Phase 1: This Week</h2>
+            </div>
+            <div class="timeline-content">
+                <div class="action-item">
+                    <h3>🔍 Research Local Stables <span class="priority priority-high">HIGH PRIORITY</span></h3>
+                    <p>Find horse facilities within 30 miles of home. This is your training ground.</p>
+                    <div class="action-steps">
+                        <ul>
+                            <li>Search Google for "horse boarding near me" or "riding stables."</li>
+                            <li>Check Facebook for local Michigan horse groups.</li>
+                            <li>List 10-15 places with owners' contact info.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <h3>📱 Professional Setup <span class="priority priority-high">HIGH PRIORITY</span></h3>
+                    <p>Get your digital presence ready for ranch recruiters.</p>
+                    <div class="action-steps">
+                        <ul>
+                            <li><strong>LinkedIn:</strong> Use a clean photo; tag yourself as "Aspiring Ranch Hand."</li>
+                            <li><strong>RanchWork.com:</strong> Sign up for seasonal job alerts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-box">
+            <h2 style="text-align: center; margin-bottom: 2rem;">✅ The Quick-Start Checklist</h2>
+            <div class="checklist-item">
+                <input type="checkbox"> <label>List 15 local stables with contact info</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> <label>Create LinkedIn and RanchWork accounts</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> <label>Draft a professional introduction email</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> <label>Visit 3 local barns in person this month</label>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Site Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">The 10-Year Roadmap</a></li>
+                    <li><a href="education.html">Education & TIP</a></li>
+                    <li><a href="working-ranch.html">Working Ranch Experience</a></li>
+                    <li><a href="resources.html">Resource Toolbox</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Michigan Shortcuts</h4>
+                <ul>
+                    <li><a href="#">MSU Horse Extension</a></li>
+                    <li><a href="#">MI Farm Bureau</a></li>
+                    <li><a href="#">TIP Scholarship Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>The Goal</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">To provide Payton with the strategic advantage needed to turn a passion for horses into a sustainable ranching legacy.</p>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2025 Created for Payton's Journey.</div>
+    </footer>
+
+</body>
+</html>

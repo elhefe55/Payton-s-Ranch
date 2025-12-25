@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education & TIP | Payton's Ranch Dream</title>
+    <style>
+        /* CSS RESET & VARIABLES (Matched to Site Design) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --earth-brown: #5C4033;
+            --sage-green: #87a878;
+            --deep-forest: #2d3b26;
+            --cream: #FAF9F6;
+            --white: #ffffff;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--earth-brown);
+            background-color: var(--cream);
+        }
+
+        /* PERSISTENT NAVIGATION */
+        nav {
+            background: var(--deep-forest);
+            padding: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--sage-green); }
+
+        /* HEADER AREA */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        header h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-box {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-top: 5px solid var(--sage-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-box h2 { color: var(--deep-forest); margin-bottom: 1.5rem; border-bottom: 2px solid var(--cream); padding-bottom: 0.5rem;}
+
+        /* TIP TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--cream);
+        }
+
+        table th, table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th { background: var(--deep-forest); color: white; }
+
+        /* COLLEGE CARDS */
+        .college-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .college-card {
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-left: 5px solid var(--gold);
+        }
+
+        .college-card h3 { color: var(--earth-brown); margin-bottom: 0.5rem; }
+        .college-card p { font-size: 0.9rem; margin-bottom: 1rem; }
+        .tag {
+            background: var(--sage-green);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep-forest);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; }
+        .footer-col ul li a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-col ul li a:hover { opacity: 1; color: var(--white); }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="education.html">Education & TIP</a>
+        <a href="working-ranch.html">Working Ranch</a>
+        <a href="resources.html">Resources</a>
+    </nav>
+
+    <header>
+        <h1>Education & The TIP Advantage</h1>
+        <p>Turning Michigan State Aid into Your Ranching Future</p>
+    </header>
+
+    <main class="container">
+
+        <section class="section-box">
+            <h2>The TIP Breakdown</h2>
+            <p>The <strong>Tuition Incentive Program (TIP)</strong> is a Michigan-specific scholarship for students with qualifying Medicaid history. For Payton, this is a way to get a professional ranching education without the debt.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Academic Goal</th>
+                        <th>What It Covers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Phase I</strong></td>
+                        <td>Associate Degree or Certificate</td>
+                        <td>Full Tuition & Mandatory Fees (up to 80 credits)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase II</strong></td>
+                        <td>Bachelor's Degree</td>
+                        <td>$500 per semester (max $2,000 total)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.85rem; font-style: italic;">*Note: You must begin using TIP within 4 years of high school graduation.</p>
+        </section>
+
+        <section class="section-box" style="border-top-color: var(--gold);">
+            <h2>Top Michigan Programs for Payton</h2>
+            <p>These institutions offer top-tier Equine and Agricultural programs and accept TIP Phase I.</p>
+
+            <div class="college-grid">
+                <div class="college-card">
+                    <span class="tag">The Gold Standard</span>
+                    <h3>Michigan State University (IAT)</h3>
+                    <p>The Institute of Agricultural Technology offers a <strong>Horse Management Certificate</strong>. You work directly at the MSU Horse Teaching and Research Center.</p>
+                    <a href="https://www.canr.msu.edu/iat/horse_management" target="_blank" style="color: var(--sage-green); font-weight: bold; text-decoration: none; font-size: 0.8rem;">View Program Details →</a>
+                </div>
+
+                <div class="college-card">
+                    <span class="tag">Business Focused</span>
+                    <h3>Northwestern Michigan College</h3>
+                    <p>Located in Traverse City. Their <strong>Agricultural Operations</strong> program is perfect for learning land management and ranch business.</p>
+                    <a href="https://www.nmc.edu/programs/academic-programs/agriculture/" target="_blank" style="color: var(--sage-green); font-weight: bold; text-decoration: none; font-size: 0.8rem;">View NMC Ag →</a>
+                </div>
+
+                <div class="college-card">
+                    <span class="tag">Local Partnership</span>
+                    <h3>Montcalm Community College</h3>
+                    <p>Offers an <strong>Agricultural Operations</strong> associate degree in partnership with MSU, keeping you close to home while earning a world-class credential.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2>The "Must-Do" Checklist</h2>
+            <ul style="list-style-position: inside; color: var(--earth-brown);">
+                <li style="margin-bottom: 1rem;"><strong>File the FAFSA:</strong> Even with TIP, you must file a FAFSA every single year.</li>
+                <li style="margin-bottom: 1rem;"><strong>Verify Eligibility:</strong> Check your status on the <a href="https://www.michigan.gov/mistudentaid" target="_blank">MiSSG Student Portal</a>.</li>
+                <li style="margin-bottom: 1rem;"><strong>Maintain a 2.0 GPA:</strong> To keep your funding, you must stay in good academic standing.</li>
+                <li><strong>Network:</strong> While in school, join the "Young Farmers" program through the Michigan Farm Bureau.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Site Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">The 10-Year Roadmap</a></li>
+                    <li><a href="education.html">Education & TIP</a></li>
+                    <li><a href="working-ranch.html">Working Ranch Experience</a></li>
+                    <li><a href="resources.html">Resource Toolbox</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Michigan Shortcuts</h4>
+                <ul>
+                    <li><a href="https://www.canr.msu.edu/horse_extension/" target="_blank">MSU Horse Extension</a></li>
+                    <li><a href="https://www.michfb.com/" target="_blank">MI Farm Bureau</a></li>
+                    <li><a href="https://www.michigan.gov/mistudentaid" target="_blank">TIP Scholarship Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>The Goal</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">To provide Payton with the strategic advantage needed to turn a passion for horses into a sustainable ranching legacy.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Created for Payton's Journey. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
