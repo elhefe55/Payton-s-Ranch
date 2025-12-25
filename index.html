@@ -14,6 +14,8 @@
             --cream: #FAF9F6;
             --white: #ffffff;
             --gold: #D4AF37;
+            /* Added a variable for consistent mobile-friendly padding */
+            --section-padding: 4rem 2rem;
         }
 
         body {
@@ -21,15 +23,17 @@
             line-height: 1.6;
             color: var(--earth-brown);
             background-color: var(--cream);
+            -webkit-font-smoothing: antialiased;
         }
 
         /* PERSISTENT NAVIGATION */
         nav {
             background: var(--deep-forest);
-            padding: 1.2rem;
+            padding: 1rem;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            flex-wrap: wrap; /* Allows links to wrap on small screens */
+            gap: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -44,6 +48,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             transition: color 0.3s;
+            white-space: nowrap; /* Prevents single links from breaking into two lines */
         }
 
         nav a:hover {
@@ -52,27 +57,30 @@
 
         /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
                         url('https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            height: 60vh; /* Slightly shorter for better mobile viewing */
+            min-height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--white);
+            padding: 1rem;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(2.2rem, 10vw, 4.5rem);
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 4vw, 1.2rem);
             font-style: italic;
             opacity: 0.9;
         }
@@ -81,16 +89,16 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: var(--section-padding);
         }
 
         .intro-text {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .intro-text h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
             color: var(--deep-forest);
             margin-bottom: 1rem;
         }
@@ -98,13 +106,20 @@
         /* GRID CARDS */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+        }
+
+        /* Adjusts for very small screens where 300px might be too wide */
+        @media (max-width: 350px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-top: 5px solid var(--sage-green);
             text-align: center;
             transition: transform 0.3s ease;
@@ -115,7 +130,7 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
@@ -126,18 +141,19 @@
             text-decoration: none;
             background: var(--earth-brown);
             color: white;
-            padding: 0.8rem;
+            padding: 1rem; /* Larger tap target */
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
+            display: block; /* Makes the entire width clickable */
         }
 
         /* FOOTER */
         footer {
             background: var(--deep-forest);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             margin-top: 4rem;
         }
 
@@ -145,14 +161,14 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
             text-align: left;
         }
 
         .footer-col h4 {
             color: var(--sage-green);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
             font-size: 0.9rem;
         }
@@ -162,19 +178,51 @@
         .footer-col ul li a {
             color: var(--cream);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.8;
+            display: inline-block;
+            padding: 4px 0; /* Easier to tap on mobile */
         }
 
         .footer-col ul li a:hover { opacity: 1; color: var(--white); }
 
         .copyright {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
             opacity: 0.6;
+        }
+
+        /* --- MOBILE OPTIMIZATIONS --- */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 2.5rem 1.2rem;
+            }
+
+            nav {
+                gap: 0.8rem 1.2rem;
+                padding: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+            }
+
+            .hero {
+                height: 50vh;
+            }
+
+            .footer-grid {
+                text-align: center; /* Better look on centered mobile screens */
+            }
+            
+            .footer-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>

@@ -88,12 +88,13 @@
         }
 
         table th, table td {
-            padding: 1rem;
+            padding: 1.2rem 1rem;
             text-align: left;
             border: 1px solid #ddd;
+            font-size: 0.95rem;
         }
 
-        table th { background: var(--deep-forest); color: white; }
+        table th { background: var(--deep-forest); color: white; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
         /* COLLEGE CARDS */
         .college-grid {
@@ -104,28 +105,62 @@
         }
 
         .college-card {
-            border: 1px solid #eee;
-            padding: 1.5rem;
+            background: var(--cream);
+            padding: 2rem;
             border-left: 5px solid var(--gold);
+            display: flex;
+            flex-direction: column;
         }
 
-        .college-card h3 { color: var(--earth-brown); margin-bottom: 0.5rem; }
-        .college-card p { font-size: 0.9rem; margin-bottom: 1rem; }
+        .college-card h3 { color: var(--earth-brown); margin: 0.8rem 0; font-size: 1.2rem; }
+        .college-card p { font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1; }
+        
         .tag {
             background: var(--sage-green);
             color: white;
-            padding: 0.2rem 0.6rem;
+            padding: 0.3rem 0.8rem;
             font-size: 0.7rem;
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 3px;
+            display: inline-block;
+            width: fit-content;
         }
 
-        /* FOOTER */
+        .card-link {
+            color: var(--deep-forest);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+
+        .card-link:hover { gap: 10px; color: var(--sage-green); }
+
+        /* CHECKLIST */
+        .checklist { list-style: none; }
+        .checklist li {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sage-green);
+            font-weight: bold;
+        }
+
+        /* FOOTER (Matched) */
         footer {
             background: var(--deep-forest);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             margin-top: 4rem;
         }
 
@@ -133,14 +168,13 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
         }
 
         .footer-col h4 {
             color: var(--sage-green);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
             font-size: 0.9rem;
         }
@@ -150,19 +184,45 @@
         .footer-col ul li a {
             color: var(--cream);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.8;
+            display: inline-block;
         }
 
         .footer-col ul li a:hover { opacity: 1; color: var(--white); }
 
         .copyright {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
             opacity: 0.6;
+        }
+
+        /* --- MOBILE OPTIMIZATIONS --- */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 2.5rem 1.2rem;
+            }
+
+            nav { gap: 0.8rem 1.2rem; padding: 0.8rem; }
+            nav a { font-size: 0.75rem; }
+
+            .section-box { padding: 1.5rem; }
+
+            .college-grid { grid-template-columns: 1fr; }
+            
+            .card-link {
+                background: var(--deep-forest);
+                color: white;
+                padding: 1rem;
+                justify-content: center;
+                border-radius: 4px;
+            }
+
+            .footer-grid { text-align: center; }
+            .footer-col { display: flex; flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -187,28 +247,30 @@
             <h2>The TIP Breakdown</h2>
             <p>The <strong>Tuition Incentive Program (TIP)</strong> is a Michigan-specific scholarship for students with qualifying Medicaid history. For Payton, this is a way to get a professional ranching education without the debt.</p>
             
-            <table>
-                <thead>
-                    <tr>
-                        <th>Phase</th>
-                        <th>Academic Goal</th>
-                        <th>What It Covers</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Phase I</strong></td>
-                        <td>Associate Degree or Certificate</td>
-                        <td>Full Tuition & Mandatory Fees (up to 80 credits)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Phase II</strong></td>
-                        <td>Bachelor's Degree</td>
-                        <td>$500 per semester (max $2,000 total)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="font-size: 0.85rem; font-style: italic;">*Note: You must begin using TIP within 4 years of high school graduation.</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Academic Goal</th>
+                            <th>What It Covers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Phase I</strong></td>
+                            <td>Associate Degree or Certificate</td>
+                            <td>Full Tuition & Mandatory Fees (up to 80 credits)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase II</strong></td>
+                            <td>Bachelor's Degree</td>
+                            <td>$500 per semester (max $2,000 total)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; font-style: italic; color: #666;">*Note: You must begin using TIP within 4 years of high school graduation.</p>
         </section>
 
         <section class="section-box" style="border-top-color: var(--gold);">
@@ -220,14 +282,14 @@
                     <span class="tag">The Gold Standard</span>
                     <h3>Michigan State University (IAT)</h3>
                     <p>The Institute of Agricultural Technology offers a <strong>Horse Management Certificate</strong>. You work directly at the MSU Horse Teaching and Research Center.</p>
-                    <a href="https://www.canr.msu.edu/iat/horse_management" target="_blank" style="color: var(--sage-green); font-weight: bold; text-decoration: none; font-size: 0.8rem;">View Program Details →</a>
+                    <a href="https://www.canr.msu.edu/iat/horse_management" target="_blank" class="card-link">View Program Details →</a>
                 </div>
 
                 <div class="college-card">
                     <span class="tag">Business Focused</span>
                     <h3>Northwestern Michigan College</h3>
                     <p>Located in Traverse City. Their <strong>Agricultural Operations</strong> program is perfect for learning land management and ranch business.</p>
-                    <a href="https://www.nmc.edu/programs/academic-programs/agriculture/" target="_blank" style="color: var(--sage-green); font-weight: bold; text-decoration: none; font-size: 0.8rem;">View NMC Ag →</a>
+                    <a href="https://www.nmc.edu/programs/academic-programs/agriculture/" target="_blank" class="card-link">View NMC Ag →</a>
                 </div>
 
                 <div class="college-card">
@@ -240,10 +302,10 @@
 
         <section class="section-box">
             <h2>The "Must-Do" Checklist</h2>
-            <ul style="list-style-position: inside; color: var(--earth-brown);">
-                <li style="margin-bottom: 1rem;"><strong>File the FAFSA:</strong> Even with TIP, you must file a FAFSA every single year.</li>
-                <li style="margin-bottom: 1rem;"><strong>Verify Eligibility:</strong> Check your status on the <a href="https://www.michigan.gov/mistudentaid" target="_blank">MiSSG Student Portal</a>.</li>
-                <li style="margin-bottom: 1rem;"><strong>Maintain a 2.0 GPA:</strong> To keep your funding, you must stay in good academic standing.</li>
+            <ul class="checklist">
+                <li><strong>File the FAFSA:</strong> Even with TIP, you must file a FAFSA every single year.</li>
+                <li><strong>Verify Eligibility:</strong> Check your status on the <a href="https://www.michigan.gov/mistudentaid" target="_blank">MiSSG Student Portal</a>.</li>
+                <li><strong>Maintain a 2.0 GPA:</strong> To keep your funding, you must stay in good academic standing.</li>
                 <li><strong>Network:</strong> While in school, join the "Young Farmers" program through the Michigan Farm Bureau.</li>
             </ul>
         </section>

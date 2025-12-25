@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-Year Roadmap | Payton's Ranch Dream</title>
     <style>
-        /* CSS RESET & VARIABLES - MATCHED TO INDEX/RESOURCES */
+        /* CSS RESET & VARIABLES */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -15,7 +15,8 @@
             --cream: #FAF9F6;
             --white: #ffffff;
             --gold: #D4AF37;
-            --rust: #A84B2B; /* Added for Roadmap accents */
+            --rust: #A84B2B;
+            --section-padding: 4rem 2rem;
         }
 
         body {
@@ -23,15 +24,17 @@
             line-height: 1.6;
             color: var(--earth-brown);
             background-color: var(--cream);
+            -webkit-font-smoothing: antialiased;
         }
 
         /* PERSISTENT NAVIGATION (Matched) */
         nav {
             background: var(--deep-forest);
-            padding: 1.2rem;
+            padding: 1rem;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -50,63 +53,71 @@
 
         nav a:hover { color: var(--sage-green); }
 
-        /* HEADER AREA (Matched to Resources style) */
+        /* HEADER AREA */
         header {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                         url('https://images.unsplash.com/photo-1530260626688-048279320445?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            padding: 6rem 2rem;
+            padding: clamp(4rem, 12vh, 6rem) 1.5rem;
             text-align: center;
             color: var(--white);
         }
 
-        header h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+        header h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 0.5rem; }
+        header p { font-size: clamp(0.9rem, 4vw, 1.1rem); opacity: 0.9; }
 
         /* MAIN CONTENT */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: var(--section-padding);
         }
 
         /* PROGRESS TRACKER SECTION */
         .progress-tracker {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 4px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             border-top: 5px solid var(--gold);
         }
 
         .progress-tracker h2 { 
             color: var(--deep-forest); 
             text-align: center; 
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
         }
 
         .milestone-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
         }
 
         .milestone-item {
             background: var(--cream);
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 4px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
+            gap: 12px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        
+        .milestone-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--sage-green);
         }
 
         /* YEAR SECTIONS */
         .year-section {
             background: var(--white);
-            padding: 3rem;
+            padding: 2.5rem;
             margin-bottom: 3rem;
             border-left: 8px solid var(--sage-green);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -116,7 +127,7 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid #eee;
             padding-bottom: 1rem;
         }
@@ -126,62 +137,62 @@
             color: white;
             padding: 1rem;
             border-radius: 50%;
-            width: 60px;
+            min-width: 60px;
             height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .year-title h2 { color: var(--deep-forest); font-size: 1.8rem; }
-        .year-title p { font-style: italic; color: #777; font-size: 0.95rem; }
+        .year-title h2 { color: var(--deep-forest); font-size: clamp(1.3rem, 5vw, 1.8rem); line-height: 1.2; }
+        .year-title p { font-style: italic; color: #777; font-size: 0.9rem; margin-top: 4px; }
 
         /* CONTENT BLOCKS */
         .goal-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .goal-box { margin-bottom: 1.5rem; }
         .goal-box h3 { 
             font-size: 1.1rem; 
             color: var(--earth-brown); 
             margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            border-bottom: 1px solid var(--cream);
+            padding-bottom: 4px;
         }
 
-        .goal-box ul { list-style-position: inside; color: #555; font-size: 0.95rem; }
-        .goal-box li { margin-bottom: 0.5rem; }
+        .goal-box ul { list-style-position: outside; padding-left: 1.2rem; color: #555; font-size: 0.95rem; }
+        .goal-box li { margin-bottom: 0.6rem; }
 
         .key-decision {
             background: #fff8e1;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 4px;
             border: 1px solid #ffe082;
             margin-top: 2rem;
+            font-size: 0.9rem;
         }
 
         .salary-tag {
             display: inline-block;
             background: var(--sage-green);
             color: white;
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 1rem;
             border-radius: 4px;
             font-weight: bold;
             font-size: 0.8rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         /* FOOTER (Matched) */
         footer {
             background: var(--deep-forest);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             margin-top: 4rem;
         }
 
@@ -189,14 +200,13 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
         }
 
         .footer-col h4 {
             color: var(--sage-green);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
             font-size: 0.9rem;
         }
@@ -206,23 +216,55 @@
         .footer-col ul li a {
             color: var(--cream);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.8;
+            display: inline-block;
+            padding: 4px 0;
         }
         .footer-col ul li a:hover { opacity: 1; color: var(--white); }
 
         .copyright {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
             opacity: 0.6;
         }
 
+        /* --- MOBILE OPTIMIZATIONS --- */
         @media (max-width: 768px) {
-            nav { gap: 1rem; flex-wrap: wrap; }
-            .year-header { flex-direction: column; text-align: center; }
+            :root {
+                --section-padding: 2rem 1rem;
+            }
+
+            nav { gap: 0.8rem 1.2rem; padding: 0.8rem; }
+            nav a { font-size: 0.75rem; }
+
+            .year-section {
+                padding: 1.2rem;
+                border-left-width: 5px;
+            }
+
+            .year-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .milestone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                text-align: center;
+            }
+            
+            .footer-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -246,14 +288,14 @@
         <section class="progress-tracker">
             <h2>🎯 Major Career Milestones</h2>
             <div class="milestone-grid">
-                <div class="milestone-item"><input type="checkbox"> First Barn Job</div>
-                <div class="milestone-item"><input type="checkbox"> HS Graduation</div>
-                <div class="milestone-item"><input type="checkbox"> College/Internship</div>
-                <div class="milestone-item"><input type="checkbox"> First Manager Role</div>
-                <div class="milestone-item"><input type="checkbox"> $10k Ranch Fund</div>
-                <div class="milestone-item"><input type="checkbox"> Certifications</div>
-                <div class="milestone-item"><input type="checkbox"> Business Plan</div>
-                <div class="milestone-item"><input type="checkbox"> Property Found</div>
+                <label class="milestone-item"><input type="checkbox"> First Barn Job</label>
+                <label class="milestone-item"><input type="checkbox"> HS Graduation</label>
+                <label class="milestone-item"><input type="checkbox"> College/Internship</label>
+                <label class="milestone-item"><input type="checkbox"> First Manager Role</label>
+                <label class="milestone-item"><input type="checkbox"> $10k Ranch Fund</label>
+                <label class="milestone-item"><input type="checkbox"> Certifications</label>
+                <label class="milestone-item"><input type="checkbox"> Business Plan</label>
+                <label class="milestone-item"><input type="checkbox"> Property Found</label>
             </div>
         </section>
 
@@ -324,7 +366,7 @@
             <div class="salary-tag">Est. Income: $25k - $32k (Entry Level)</div>
         </section>
 
-        </main>
+    </main>
 
     <footer>
         <div class="footer-grid">
