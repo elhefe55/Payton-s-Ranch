@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education & TIP | Payton's Ranch Dream</title>
     <style>
-        /* CSS RESET & VARIABLES (Matched to Site Design) */
+        /* CSS RESET & VARIABLES */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -15,6 +15,7 @@
             --cream: #FAF9F6;
             --white: #ffffff;
             --gold: #D4AF37;
+            --section-padding: 4rem 2rem;
         }
 
         body {
@@ -22,15 +23,17 @@
             line-height: 1.6;
             color: var(--earth-brown);
             background-color: var(--cream);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* PERSISTENT NAVIGATION */
+        /* PERSISTENT NAVIGATION (Matched) */
         nav {
             background: var(--deep-forest);
-            padding: 1.2rem;
+            padding: 1rem;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -55,18 +58,19 @@
                         url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            padding: 6rem 2rem;
+            padding: clamp(4rem, 15vh, 6rem) 1.5rem;
             text-align: center;
             color: var(--white);
         }
 
-        header h1 { font-size: 3rem; margin-bottom: 1rem; }
+        header h1 { font-size: clamp(1.8rem, 7vw, 3rem); margin-bottom: 1rem; }
+        header p { font-size: clamp(0.9rem, 4vw, 1.1rem); opacity: 0.9; }
 
         /* MAIN CONTENT */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: var(--section-padding);
         }
 
         .section-box {
@@ -77,14 +81,28 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .section-box h2 { color: var(--deep-forest); margin-bottom: 1.5rem; border-bottom: 2px solid var(--cream); padding-bottom: 0.5rem;}
+        .section-box h2 { 
+            color: var(--deep-forest); 
+            margin-bottom: 1.5rem; 
+            border-bottom: 2px solid var(--cream); 
+            padding-bottom: 0.5rem;
+            font-size: clamp(1.3rem, 5vw, 1.8rem);
+        }
 
-        /* TIP TABLE */
+        /* RESPONSIVE TIP TABLE */
+        .table-container {
+            width: 100%;
+            overflow-x: auto; /* Enables horizontal swipe on small screens */
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
-            background: var(--cream);
+            min-width: 600px; /* Ensures table content doesn't get squished */
+            background: var(--white);
         }
 
         table th, table td {
