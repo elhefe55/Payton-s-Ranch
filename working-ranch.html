@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Ranch Experience | Payton's Ranch Dream</title>
+    <style>
+        /* CSS RESET & VARIABLES (Matched to Site Design) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --earth-brown: #5C4033;
+            --sage-green: #87a878;
+            --deep-forest: #2d3b26;
+            --cream: #FAF9F6;
+            --white: #ffffff;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--earth-brown);
+            background-color: var(--cream);
+        }
+
+        /* PERSISTENT NAVIGATION */
+        nav {
+            background: var(--deep-forest);
+            padding: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--sage-green); }
+
+        /* HEADER AREA */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        header h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-box {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-top: 5px solid var(--deep-forest);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-box h2 { color: var(--deep-forest); margin-bottom: 1.5rem; }
+
+        /* JOB TYPE GRID */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .job-card {
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .job-card h3 { color: var(--earth-brown); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; }
+        .job-card ul { list-style-position: inside; font-size: 0.9rem; color: #444; }
+
+        /* SKILL LIST */
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--sage-green);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* CALL TO ACTION BOX */
+        .cta-box {
+            background: var(--earth-brown);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-white {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--white);
+            color: var(--earth-brown);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep-forest);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; }
+        .footer-col ul li a { color: var(--cream); text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
+        .footer-col ul li a:hover { opacity: 1; color: var(--white); }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="education.html">Education & TIP</a>
+        <a href="working-ranch.html">Working Ranch</a>
+        <a href="resources.html">Resources</a>
+    </nav>
+
+    <header>
+        <h1>Working Ranch Experience</h1>
+        <p>Your Guide to Landing the First Job and Building Real-World Skills</p>
+    </header>
+
+    <main class="container">
+
+        <section class="section-box">
+            <h2>Start Where You Are</h2>
+            <p>You don't need to own 100 acres to start your ranching career. In Michigan and across the country, there are entry-level positions designed for people exactly like you: hardworking, willing to learn, and passionate about horses.</p>
+            
+            <div class="job-grid">
+                <div class="job-card">
+                    <h3>🐎 Barn Hand / Stable Assistant</h3>
+                    <p>The best place to start in Michigan. Local boarding stables always need help.</p>
+                    <ul>
+                        <li>Daily feeding & watering</li>
+                        <li>Stall cleaning & turn-out</li>
+                        <li>Basic grooming & tacking</li>
+                    </ul>
+                </div>
+                <div class="job-card">
+                    <h3>🤠 Guest Ranch Wrangler</h3>
+                    <p>Seasonal summer work (often out West) where you guide trails and host guests.</p>
+                    <ul>
+                        <li>Trail riding & horse safety</li>
+                        <li>Guest hospitality</li>
+                        <li>Long hours, but often includes room & board</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="section-box" style="border-top-color: var(--gold);">
+            <h2>Skills You Need to Build Now</h2>
+            <p>Ranching isn't just riding; it's land management, mechanics, and livestock health. Focus on collecting these "skills" like badges.</p>
+            <div class="skill-list">
+                <span class="skill-tag">Tractor Operation</span>
+                <span class="skill-tag">Fence Repair</span>
+                <span class="skill-tag">Basic Equine First Aid</span>
+                <span class="skill-tag">Truck & Trailer Driving</span>
+                <span class="skill-tag">Pasture Management</span>
+                <span class="skill-tag">Hay Management</span>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2>The "Resume Builder" Strategy</h2>
+            <p>To get a high-paying ranch management job later, you need a resume that proves you can handle the grit. Here is your 3-step approach:</p>
+            <ol style="margin-left: 1.5rem; margin-top: 1rem; color: #444;">
+                <li style="margin-bottom: 1rem;"><strong>Volunteer First:</strong> If you have zero experience, offer to work 4 hours a weekend at a local barn in exchange for "ground work" lessons.</li>
+                <li style="margin-bottom: 1rem;"><strong>The Summer Internship:</strong> During your first year of college (using TIP), apply for a summer wrangler job via <strong>CoolWorks</strong>.</li>
+                <li><strong>Join the Bureau:</strong> Join the Michigan Farm Bureau's "Young Farmers" group to find mentors who actually own land in Michigan.</li>
+            </ol>
+        </section>
+
+        <div class="cta-box">
+            <h3>Ready to find your first job?</h3>
+            <p>Check out our curated list of ranch-specific job boards.</p>
+            <a href="resources.html" class="btn-white">Open the Toolbox</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Site Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roadmap.html">The 10-Year Roadmap</a></li>
+                    <li><a href="education.html">Education & TIP</a></li>
+                    <li><a href="working-ranch.html">Working Ranch Experience</a></li>
+                    <li><a href="resources.html">Resource Toolbox</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Michigan Shortcuts</h4>
+                <ul>
+                    <li><a href="https://www.canr.msu.edu/horse_extension/" target="_blank">MSU Horse Extension</a></li>
+                    <li><a href="https://www.michfb.com/" target="_blank">MI Farm Bureau</a></li>
+                    <li><a href="https://www.michigan.gov/mistudentaid" target="_blank">TIP Scholarship Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>The Goal</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">To provide Payton with the strategic advantage needed to turn a passion for horses into a sustainable ranching legacy.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Created for Payton's Journey. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
