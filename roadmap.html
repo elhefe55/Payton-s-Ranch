@@ -27,14 +27,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* PERSISTENT NAVIGATION (Matched) */
+        /* PERSISTENT NAVIGATION */
         nav {
             background: var(--deep-forest);
-            padding: 1rem;
+            padding: 1.2rem;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
+            gap: 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -56,16 +55,15 @@
         /* HEADER AREA */
         header {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('https://images.unsplash.com/photo-1726801561954-52fc19008cf6?q=80&w=1030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                        url('https://images.unsplash.com/photo-1726801561954-52fc19008cf6?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            padding: clamp(4rem, 12vh, 6rem) 1.5rem;
+            padding: 6rem 1.5rem;
             text-align: center;
             color: var(--white);
         }
 
-        header h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 0.5rem; }
-        header p { font-size: clamp(0.9rem, 4vw, 1.1rem); opacity: 0.9; }
+        header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
 
         /* MAIN CONTENT */
         .container {
@@ -84,12 +82,7 @@
             border-top: 5px solid var(--gold);
         }
 
-        .progress-tracker h2 { 
-            color: var(--deep-forest); 
-            text-align: center; 
-            margin-bottom: 1.5rem;
-            font-size: clamp(1.4rem, 5vw, 1.8rem);
-        }
+        .progress-tracker h2 { color: var(--deep-forest); text-align: center; margin-bottom: 1.5rem; }
 
         .milestone-grid {
             display: grid;
@@ -105,13 +98,6 @@
             align-items: center;
             gap: 12px;
             font-size: 0.85rem;
-            cursor: pointer;
-        }
-        
-        .milestone-item input {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--sage-green);
         }
 
         /* YEAR SECTIONS */
@@ -144,38 +130,16 @@
             justify-content: center;
             font-weight: bold;
             font-size: 1.2rem;
-            flex-shrink: 0;
         }
 
-        .year-title h2 { color: var(--deep-forest); font-size: clamp(1.3rem, 5vw, 1.8rem); line-height: 1.2; }
-        .year-title p { font-style: italic; color: #777; font-size: 0.9rem; margin-top: 4px; }
-
-        /* CONTENT BLOCKS */
         .goal-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .goal-box h3 { 
-            font-size: 1.1rem; 
-            color: var(--earth-brown); 
-            margin-bottom: 0.8rem;
-            border-bottom: 1px solid var(--cream);
-            padding-bottom: 4px;
-        }
-
-        .goal-box ul { list-style-position: outside; padding-left: 1.2rem; color: #555; font-size: 0.95rem; }
-        .goal-box li { margin-bottom: 0.6rem; }
-
-        .key-decision {
-            background: #fff8e1;
-            padding: 1.2rem;
-            border-radius: 4px;
-            border: 1px solid #ffe082;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
+        .goal-box h3 { font-size: 1.1rem; color: var(--earth-brown); margin-bottom: 0.8rem; }
+        .goal-box ul { list-style-position: inside; color: #555; font-size: 0.95rem; }
 
         .salary-tag {
             display: inline-block;
@@ -188,84 +152,25 @@
             margin-top: 1.5rem;
         }
 
-        /* FOOTER (Matched) */
+        /* FOOTER */
         footer {
             background: var(--deep-forest);
             color: white;
-            padding: 3rem 1.5rem;
+            padding: 4rem 2rem;
             margin-top: 4rem;
         }
 
         .footer-grid {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
         }
 
-        .footer-col h4 {
-            color: var(--sage-green);
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
+        .footer-col h4 { color: var(--sage-green); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem; }
         .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 0.8rem; }
-        .footer-col ul li a {
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 0.95rem;
-            opacity: 0.8;
-            display: inline-block;
-            padding: 4px 0;
-        }
-        .footer-col ul li a:hover { opacity: 1; color: var(--white); }
-
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        /* --- MOBILE OPTIMIZATIONS --- */
-        @media (max-width: 768px) {
-            :root {
-                --section-padding: 2rem 1rem;
-            }
-
-            nav { gap: 0.8rem 1.2rem; padding: 0.8rem; }
-            nav a { font-size: 0.75rem; }
-
-            .year-section {
-                padding: 1.2rem;
-                border-left-width: 5px;
-            }
-
-            .year-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .milestone-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                text-align: center;
-            }
-            
-            .footer-col {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+        .footer-col ul li a { color: var(--cream); text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -288,82 +193,109 @@
         <section class="progress-tracker">
             <h2>🎯 Major Career Milestones</h2>
             <div class="milestone-grid">
-                <label class="milestone-item"><input type="checkbox"> First Barn Job</label>
                 <label class="milestone-item"><input type="checkbox"> HS Graduation</label>
-                <label class="milestone-item"><input type="checkbox"> College/Internship</label>
-                <label class="milestone-item"><input type="checkbox"> First Manager Role</label>
-                <label class="milestone-item"><input type="checkbox"> $10k Ranch Fund</label>
-                <label class="milestone-item"><input type="checkbox"> Certifications</label>
-                <label class="milestone-item"><input type="checkbox"> Business Plan</label>
-                <label class="milestone-item"><input type="checkbox"> Property Found</label>
+                <label class="milestone-item"><input type="checkbox"> TIP Completion</label>
+                <label class="milestone-item"><input type="checkbox"> First West Coast Season</label>
+                <label class="milestone-item"><input type="checkbox"> Manager Title</label>
+                <label class="milestone-item"><input type="checkbox"> $25k Ranch Fund</label>
+                <label class="milestone-item"><input type="checkbox"> USDA Loan Ready</label>
             </div>
         </section>
 
         <section class="year-section">
             <div class="year-header">
-                <div class="year-badge">Y1</div>
-                <div class="year-title">
-                    <h2>Foundation: Getting Your Hands Dirty</h2>
-                    <p>Age 17-18 | High School Senior Year</p>
-                </div>
+                <div class="year-badge">1-2</div>
+                <div class="year-title"><h2>Foundation & Schooling</h2><p>Age 17-19</p></div>
             </div>
-
             <div class="goal-grid">
                 <div class="goal-box">
-                    <h3>🎯 Primary Goals</h3>
+                    <h3>🎯 Goals</h3>
                     <ul>
-                        <li>Secure first barn job (paid or volunteer)</li>
-                        <li>Maintain 6+ months of consistent work</li>
-                        <li>Apply for TIP benefits and College</li>
-                        <li>Save $1,000 for emergency ranch fund</li>
+                        <li>Use TIP for Horse Management Certificate</li>
+                        <li>Work as Barn Hand in Michigan</li>
                     </ul>
                 </div>
                 <div class="goal-box">
-                    <h3>📚 Skills to Develop</h3>
+                    <h3>🛠 Skills</h3>
                     <ul>
-                        <li>Daily feeding and stall maintenance</li>
-                        <li>Basic horse handling & body language</li>
-                        <li>Barn safety and emergency protocols</li>
-                        <li>Professional reliability and punctuality</li>
+                        <li>Stall maintenance & Feeding</li>
+                        <li>Basic Equine First Aid</li>
                     </ul>
                 </div>
             </div>
-
-            <div class="key-decision">
-                <strong>🔑 Key Decision:</strong> By Spring, choose your path: Will you use TIP for a 2-year Equine degree, or seek a full-time "Working Student" position out of state?
-            </div>
-            <div class="salary-tag">Est. Income: $0 - $15/hr</div>
+            <div class="salary-tag">Income: Hourly ($15-18/hr)</div>
         </section>
 
         <section class="year-section" style="border-left-color: var(--earth-brown);">
             <div class="year-header">
-                <div class="year-badge">Y2</div>
-                <div class="year-title">
-                    <h2>Immersion: Full-Time Commitment</h2>
-                    <p>Age 18-19 | Post-High School Exploration</p>
-                </div>
+                <div class="year-badge">3-5</div>
+                <div class="year-title"><h2>The Traveling Wrangler</h2><p>Age 20-22</p></div>
             </div>
-
             <div class="goal-grid">
                 <div class="goal-box">
-                    <h3>🎯 Primary Goals</h3>
+                    <h3>🎯 Goals</h3>
                     <ul>
-                        <li>Complete Year 1 of College or Internship</li>
-                        <li>Network with 3 Michigan ranch owners</li>
-                        <li>Join the Michigan Farm Bureau</li>
-                        <li>Gain basic tractor/equipment operation hours</li>
+                        <li>2 Full seasons at a Western Guest Ranch</li>
+                        <li>Get CDL (Truck & Trailer License)</li>
                     </ul>
                 </div>
                 <div class="goal-box">
-                    <h3>💼 Experience to Gain</h3>
+                    <h3>🛠 Skills</h3>
                     <ul>
-                        <li>Assisting with veterinary/farrier visits</li>
-                        <li>Basic fence repair and land upkeep</li>
-                        <li>Customer service/lesson assistance</li>
+                        <li>Guest Relations & Trail Guiding</li>
+                        <li>Advanced Pasture Management</li>
                     </ul>
                 </div>
             </div>
-            <div class="salary-tag">Est. Income: $25k - $32k (Entry Level)</div>
+            <div class="salary-tag">Income: $35k - $45k + Housing</div>
+        </section>
+
+        <section class="year-section" style="border-left-color: var(--gold);">
+            <div class="year-header">
+                <div class="year-badge">6-8</div>
+                <div class="year-title"><h2>Ranch Management</h2><p>Age 23-25</p></div>
+            </div>
+            <div class="goal-grid">
+                <div class="goal-box">
+                    <h3>🎯 Goals</h3>
+                    <ul>
+                        <li>Assistant Ranch Manager Position</li>
+                        <li>Build Credit Score for USDA Land Loan</li>
+                    </ul>
+                </div>
+                <div class="goal-box">
+                    <h3>🛠 Skills</h3>
+                    <ul>
+                        <li>Staff Hiring & Training</li>
+                        <li>Budgeting & Ag Business Ops</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="salary-tag">Income: $55k - $70k</div>
+        </section>
+
+        <section class="year-section" style="border-left-color: var(--rust);">
+            <div class="year-header">
+                <div class="year-badge">9-10</div>
+                <div class="year-title"><h2>Ownership / Legacy</h2><p>Age 26-27+</p></div>
+            </div>
+            <div class="goal-grid">
+                <div class="goal-box">
+                    <h3>🎯 Goals</h3>
+                    <ul>
+                        <li>Purchase 10-20 acres (USDA Beginning Farmer Loan)</li>
+                        <li>Launch Private Training or Boarding Brand</li>
+                    </ul>
+                </div>
+                <div class="goal-box">
+                    <h3>🛠 Skills</h3>
+                    <ul>
+                        <li>Infrastructure building (Fencing/Barns)</li>
+                        <li>Marketing & Client Management</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="salary-tag">Goal: Financial Independence</div>
         </section>
 
     </main>
@@ -371,31 +303,21 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Site Navigation</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="roadmap.html">The 10-Year Roadmap</a></li>
-                    <li><a href="education.html">Education & TIP</a></li>
-                    <li><a href="working-ranch.html">Working Ranch Experience</a></li>
-                    <li><a href="resources.html">Resource Toolbox</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Michigan Shortcuts</h4>
-                <ul>
-                    <li><a href="https://www.canr.msu.edu/horse_extension/" target="_blank">MSU Horse Extension</a></li>
-                    <li><a href="https://www.michfb.com/" target="_blank">MI Farm Bureau</a></li>
-                    <li><a href="https://www.michigan.gov/mistudentaid" target="_blank">TIP Scholarship Portal</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="working-ranch.html">Working Ranch</a></li>
+                    <li><a href="resources.html">Resources</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>The Goal</h4>
-                <p style="font-size: 0.9rem; opacity: 0.8;">To provide Payton with the strategic advantage needed to turn a passion for horses into a sustainable ranching legacy.</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">From the first stall cleaned to the first gate owned.</p>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2025 Created for Payton's Journey. All Rights Reserved.
-        </div>
+        <div class="copyright">&copy; 2025 Payton's Ranch Dream</div>
     </footer>
 
 </body>
