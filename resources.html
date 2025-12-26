@@ -25,14 +25,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* PERSISTENT NAVIGATION (Synchronized with Home) */
+        /* PERSISTENT NAVIGATION (Matched to Education Page) */
         nav {
             background: var(--deep-forest);
-            padding: 1rem;
+            padding: 1.2rem;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
+            gap: 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -51,31 +50,22 @@
 
         nav a:hover { color: var(--sage-green); }
 
-        /* HEADER AREA */
+        /* HEADER AREA (Updated to Local Image) */
         header {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('resource.cover.jpg');
+                        url('resource.cover.jpg'); /* Local file reference */
             background-size: cover;
             background-position: center;
-            padding: clamp(4rem, 15vh, 6rem) 1.5rem;
+            padding: 6rem 2rem;
             text-align: center;
             color: var(--white);
         }
 
-        header h1 { 
-            font-size: clamp(2rem, 8vw, 3.5rem); 
-            margin-bottom: 1rem; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        header p {
-            font-size: clamp(0.9rem, 4vw, 1.1rem);
-            opacity: 0.9;
-        }
+        header h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
 
         /* MAIN CONTENT */
         .container {
-            max-width: 1200px;
+            max-width: 1100px; /* Matched to Education Page */
             margin: 0 auto;
             padding: var(--section-padding);
         }
@@ -86,10 +76,7 @@
             padding-bottom: 0.8rem;
         }
 
-        .section-intro h2 { 
-            color: var(--deep-forest); 
-            font-size: clamp(1.4rem, 5vw, 1.8rem);
-        }
+        .section-intro h2 { color: var(--deep-forest); }
 
         /* RESOURCE GRIDS */
         .resource-grid {
@@ -99,23 +86,17 @@
             margin-bottom: 4rem;
         }
 
-        @media (max-width: 350px) {
-            .resource-grid { grid-template-columns: 1fr; }
-        }
-
         .resource-card {
             background: var(--white);
             padding: 2rem;
             border-left: 5px solid var(--sage-green);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .resource-card:hover { transform: translateY(-5px); }
-        .resource-card h3 { color: var(--earth-brown); margin-bottom: 0.8rem; font-size: 1.2rem; }
+        .resource-card h3 { color: var(--earth-brown); margin-bottom: 0.8rem; }
         .resource-card p { font-size: 0.95rem; margin-bottom: 1.5rem; color: #555; }
 
         .btn {
@@ -126,88 +107,41 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.8rem;
-            display: inline-block;
             text-align: center;
             transition: background 0.3s;
         }
 
-        .btn:hover {
-            background: var(--earth-brown);
-        }
+        .btn:hover { background: var(--earth-brown); }
 
-        /* FOOTER (Synchronized with Home) */
+        /* FOOTER */
         footer {
             background: var(--deep-forest);
             color: white;
-            padding: 3rem 1.5rem;
+            padding: 4rem 2rem;
             margin-top: 4rem;
         }
 
         .footer-grid {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
         }
 
-        .footer-col h4 {
-            color: var(--sage-green);
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
+        .footer-col h4 { color: var(--sage-green); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem; }
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin-bottom: 0.8rem; }
-        .footer-col ul li a {
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 0.95rem;
-            opacity: 0.8;
-            display: inline-block;
-            padding: 4px 0;
-        }
-
+        .footer-col ul li a { color: var(--cream); text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
         .footer-col ul li a:hover { opacity: 1; color: var(--white); }
 
         .copyright {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
             opacity: 0.6;
-        }
-
-        /* --- MOBILE OPTIMIZATIONS --- */
-        @media (max-width: 768px) {
-            :root {
-                --section-padding: 2.5rem 1.2rem;
-            }
-
-            nav {
-                gap: 0.8rem 1.2rem;
-                padding: 0.8rem;
-            }
-
-            nav a { font-size: 0.75rem; }
-
-            .btn {
-                display: block; /* Makes buttons full width on mobile */
-                width: 100%;
-                padding: 1rem;
-            }
-
-            .footer-grid {
-                text-align: center;
-            }
-            
-            .footer-col {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
         }
     </style>
 </head>
@@ -250,6 +184,27 @@
         </div>
 
         <div class="section-intro">
+            <h2>🐎 Michigan Equestrian Internships</h2>
+        </div>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Mackinac Island (MCEC)</h3>
+                <p>Summer internship in a car-free environment. Includes on-island housing.</p>
+                <a href="https://www.mackinachorses.org/employment" target="_blank" class="btn">Apply Here</a>
+            </div>
+            <div class="resource-card">
+                <h3>Detroit Horse Power</h3>
+                <p>Focus on youth mentoring and urban stable management.</p>
+                <a href="https://www.detroithorsepower.org/jobs" target="_blank" class="btn">View Info</a>
+            </div>
+            <div class="resource-card">
+                <h3>MSU Research Center</h3>
+                <p>Hands-on student worker roles in breeding and barn management.</p>
+                <a href="https://www.canr.msu.edu/jobs/summer-internship-program-many-positions-across-mi" target="_blank" class="btn">Visit MSU Careers</a>
+            </div>
+        </div>
+
+        <div class="section-intro">
             <h2>💼 Career & Job Boards</h2>
         </div>
         <div class="resource-grid">
@@ -263,11 +218,6 @@
                 <p>Direct listings for hands-on, entry-level working ranch positions.</p>
                 <a href="https://www.ranchwork.com" target="_blank" class="btn">View Board</a>
             </div>
-            <div class="resource-card">
-                <h3>Dude Ranchers’ Assoc.</h3>
-                <p>The standard for hospitality and horse-focused seasonal work.</p>
-                <a href="https://www.duderanch.org" target="_blank" class="btn">Explore DRA</a>
-            </div>
         </div>
 
     </main>
@@ -275,30 +225,29 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Site Navigation</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="roadmap.html">The 10-Year Roadmap</a></li>
+                    <li><a href="roadmap.html">Roadmap</a></li>
                     <li><a href="education.html">Education & TIP</a></li>
-                    <li><a href="working-ranch.html">Working Ranch Experience</a></li>
-                    <li><a href="resources.html">Resource Toolbox</a></li>
+                    <li><a href="working-ranch.html">Working Ranch</a></li>
+                    <li><a href="resources.html">Resources</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Michigan Shortcuts</h4>
+                <h4>Shortcuts</h4>
                 <ul>
-                    <li><a href="https://www.canr.msu.edu/horse_extension/" target="_blank">MSU Horse Extension</a></li>
-                    <li><a href="https://www.michfb.com/" target="_blank">MI Farm Bureau</a></li>
-                    <li><a href="https://www.michigan.gov/mistudentaid" target="_blank">TIP Scholarship Portal</a></li>
+                    <li><a href="https://www.michigan.gov/mistudentaid" target="_blank">TIP Portal</a></li>
+                    <li><a href="https://www.canr.msu.edu/horse_extension/" target="_blank">MSU Extension</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>The Goal</h4>
-                <p style="font-size: 0.9rem; opacity: 0.8;">To provide Payton with the strategic advantage needed to turn a passion for horses into a sustainable ranching legacy.</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Empowering Payton with the tools to turn a passion for horses into a sustainable Michigan ranching legacy.</p>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2025 Created for Payton's Journey. All Rights Reserved.
+            &copy; 2025 Payton's Ranch Dream. All Rights Reserved.
         </div>
     </footer>
 
