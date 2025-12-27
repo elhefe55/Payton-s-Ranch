@@ -9,36 +9,65 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Timeline Specific Styling to blend with your Original Version */
-        .roadmap-container { position: relative; max-width: 900px; margin: 2rem auto; padding-left: 40px; }
-        .roadmap-container::after { content: ''; position: absolute; width: 4px; background: var(--sage-green); top: 0; bottom: 0; left: 20px; }
-        
-        .step { 
-            position: relative; 
-            background: white; 
-            padding: 1.5rem; 
-            margin-bottom: 2rem; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--gold);
+        /* NEW DROPDOWN DESIGN */
+        details {
+            background: var(--white);
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            overflow: hidden;
+            transition: transform 0.2s ease;
         }
-        .step::before { 
-            content: ''; position: absolute; width: 16px; height: 16px; 
-            background: var(--gold); border: 3px solid var(--cream); 
-            border-radius: 50%; left: -31px; top: 20px; z-index: 2;
-        }
-        .step h3 { color: var(--deep-forest); font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .tag { display: inline-block; background: var(--sage-green); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-bottom: 8px; }
 
-        @media (min-width: 768px) {
-            .roadmap-container { padding-left: 0; }
-            .roadmap-container::after { left: 50%; margin-left: -2px; }
-            .step { width: 45%; margin-left: 0; }
-            .step:nth-child(even) { margin-left: 55%; border-left: 5px solid var(--earth-brown); }
-            .step:nth-child(even)::before { left: -7.2%; }
-            .step:nth-child(odd) { text-align: right; }
-            .step:nth-child(odd)::before { right: -7.2%; left: auto; }
+        details:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
         }
+
+        summary {
+            padding: 1.5rem 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            font-size: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--deep-forest);
+            background: var(--white);
+            transition: background 0.3s ease;
+        }
+
+        summary::-webkit-details-marker { display: none; } /* Hide default arrow */
+
+        /* The Custom Toggle Icon */
+        summary::after {
+            content: '+';
+            font-size: 1.8rem;
+            color: var(--sage-green);
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: '−';
+            transform: rotate(180deg);
+            color: var(--rust);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .dropdown-content {
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        /* Spacing Utility */
+        .section-spacer { margin-bottom: 4rem; }
     </style>
 </head>
 <body>
@@ -52,32 +81,6 @@
 
     <main class="container">
 
-        <section style="margin-bottom: 5rem;">
-            <h2 style="text-align: center; color: var(--deep-forest); margin-bottom: 3rem;">The Big Picture</h2>
-            <div class="roadmap-container">
-                <div class="step">
-                    <span class="tag">YEAR 1-2</span>
-                    <h3>High School Launch</h3>
-                    <p>Focus on local volunteer work and securing your TIP funding eligibility.</p>
-                </div>
-                <div class="step">
-                    <span class="tag">YEAR 3-4</span>
-                    <h3>The Skills Pivot</h3>
-                    <p>Choose your Path: College, Work, or a Hybrid of both.</p>
-                </div>
-                <div class="step">
-                    <span class="tag">YEAR 5-8</span>
-                    <h3>Professional Grind</h3>
-                    <p>Move into leadership roles like Head Wrangler or Assistant Manager.</p>
-                </div>
-                <div class="step">
-                    <span class="tag">YEAR 10+</span>
-                    <h3>Ownership</h3>
-                    <p>Leverage your experience to apply for USDA Beginning Farmer Loans.</p>
-                </div>
-            </div>
-        </section>
-
         <section class="intro-note">
             <h2 style="color: var(--deep-forest); margin-bottom: 1rem;">More Than One Path</h2>
             <p style="max-width: 800px; margin: 0 auto; color: #555;">
@@ -85,7 +88,9 @@
             </p>
         </section>
 
-        <section class="summer-focus" style="background: white; padding: 2rem; border-radius: 8px; border: 2px dashed var(--sage-green); margin-bottom: 4rem;">
+        <div class="section-spacer"></div>
+
+        <section class="summer-focus" style="background: white; padding: 2rem; border-radius: 8px; border: 2px dashed var(--sage-green); margin-bottom: 5rem;">
             <h2 style="color: var(--rust); text-align: center; margin-bottom: 1.5rem;">🚀 RIGHT NOW: SUMMER 2025</h2>
             <div class="cards-grid">
                 <div class="option-box">
@@ -103,11 +108,11 @@
             </div>
         </section>
 
-        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--deep-forest);">🎯 CHOOSE YOUR PATH</h2>
+        <h2 style="text-align: center; margin-bottom: 2.5rem; color: var(--deep-forest); letter-spacing: 1px;">🎯 CHOOSE YOUR PATH</h2>
 
-        <details>
+        <details style="border-left: 8px solid var(--sage-green);">
             <summary>🎓 Path 1: The College Route (MSU Animal Science)</summary>
-            <div class="dropdown-content" style="padding: 1.5rem;">
+            <div class="dropdown-content">
                 <div class="timeline-step">
                     <span class="year-label">2025 - 2027: Foundation</span>
                     <p>Associate Degree at Community College using <strong>Michigan TIP Phase I</strong>.</p>
@@ -122,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-step">
+                <div class="timeline-step" style="margin-top: 2rem;">
                     <span class="year-label">2027 - 2029: Specialization</span>
                     <p>Transfer to MSU. Work at the MSU Horse Teaching & Research Center.</p>
                     <div class="milestone-grid">
@@ -139,12 +144,12 @@
             </div>
         </details>
 
-        <details style="border-left-color: var(--gold);">
+        <details style="border-left: 8px solid var(--gold);">
             <summary>🚜 Path 2: The Work Route (Fast Track Ownership)</summary>
-            <div class="dropdown-content" style="padding: 1.5rem;">
+            <div class="dropdown-content">
                 <div class="timeline-step">
                     <span class="year-label">2025 - 2027: The Grind</span>
-                    <p>Full-time Ranch Hand. Live at home or in provided housing.</p>
+                    <p>Full-time Ranch Hand. Live at home or in provided housing to maximize savings.</p>
                     <div class="milestone-grid">
                         <div class="milestone-box">
                             <h5>Skills to Master</h5>
@@ -159,10 +164,10 @@
             </div>
         </details>
 
-        <details style="border-left-color: var(--rust);">
+        <details style="border-left: 8px solid var(--rust);">
             <summary>⚖️ Path 3: The Hybrid Route (Flexibility First)</summary>
-            <div class="dropdown-content" style="padding: 1.5rem;">
-                <p>Spend 2 years working 30hrs/week while taking 2 online classes per semester.</p>
+            <div class="dropdown-content">
+                <p style="margin-bottom: 1.5rem;">Spend 2 years working 30hrs/week while taking 2 online classes per semester. Perfect for testing the industry while staying in school.</p>
                 <div class="milestone-grid">
                     <div class="milestone-box">
                         <h5>2026 Goal</h5>
@@ -177,24 +182,24 @@
         </details>
 
         <section class="faq-section">
-            <h2 style="text-align: center; margin-bottom: 2rem; margin-top: 4rem;">❓ Roadmap FAQ</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem; margin-top: 5rem;">❓ Roadmap FAQ</h2>
             <div class="card" style="margin-bottom: 1rem;">
                 <h4>What if I don't get into MSU?</h4>
                 <p>Start at Community College. MSU accepts almost all transfer credits from MI community colleges.</p>
             </div>
             <div class="card" style="margin-bottom: 1rem;">
                 <h4>What if I can't save $25,000?</h4>
-                <p>Look into leasing land first. You can lease 10 acres while you keep saving.</p>
+                <p>Look into leasing land first. You can lease 10 acres while you keep saving for a down payment.</p>
             </div>
         </section>
 
-        <section class="action-guide" style="background: var(--deep-forest); color: white; padding: 2rem; border-radius: 8px; margin-top: 4rem;">
-            <h2>🐴 QUICK ACTION GUIDE: This Month</h2>
+        <section class="action-guide" style="background: var(--deep-forest); color: white; padding: 2.5rem; border-radius: 8px; margin-top: 5rem;">
+            <h2 style="color: var(--sage-green);">🐴 QUICK ACTION GUIDE: This Month</h2>
             <ul style="list-style: none; padding-top: 1rem;">
-                <li style="margin-bottom: 10px;">▢ <strong>Secure Summer Work:</strong> Call 3 local barns this week.</li>
-                <li style="margin-bottom: 10px;">▢ <strong>Open the "Ranch Fund":</strong> Set up a separate savings account.</li>
-                <li style="margin-bottom: 10px;">▢ <strong>Log Your Hours:</strong> Start a notebook tracking horse handling time.</li>
-                <li style="margin-bottom: 10px;">▢ <strong>Confirm TIP:</strong> Ensure your counselor has your paperwork ready.</li>
+                <li style="margin-bottom: 15px;">▢ <strong>Secure Summer Work:</strong> Call 3 local barns this week.</li>
+                <li style="margin-bottom: 15px;">▢ <strong>Open the "Ranch Fund":</strong> Set up a separate savings account.</li>
+                <li style="margin-bottom: 15px;">▢ <strong>Log Your Hours:</strong> Start a notebook tracking horse handling time.</li>
+                <li style="margin-bottom: 15px;">▢ <strong>Confirm TIP:</strong> Ensure your counselor has your paperwork ready.</li>
             </ul>
         </section>
 
