@@ -30,15 +30,34 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Nav & Footer Styles (Matches your shared files) */
-        nav, #footer-placeholder { background: var(--deep-forest); color: white; }
-        nav { padding: 1.2rem; display: flex; justify-content: center; gap: 2rem; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; }
-        
-        #footer-placeholder { text-align: center; padding: 3rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-        #footer-placeholder a { color: var(--gold); text-decoration: none; font-weight: bold; }
+        /* NAVIGATION STYLES (Sync with Index) */
+        nav {
+            background: var(--deep-forest);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-        /* HEADER */
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        nav a:hover { color: var(--sage-green); }
+
+        /* HEADER (Sync with Index Unified Style) */
         header {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url('https://images.unsplash.com/photo-1726801561954-52fc19008cf6?auto=format&fit=crop&q=80&w=2000');
@@ -47,45 +66,70 @@
             padding: clamp(5rem, 15vh, 8rem) 1.5rem;
             text-align: center;
             color: var(--white);
-            min-height: 350px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            min-height: 350px;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: var(--section-padding); }
+        header h1 { 
+            font-size: clamp(2rem, 7vw, 3.5rem); 
+            margin-bottom: 1rem; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
 
-        /* INTRO NOTE */
-        .intro-note { text-align: center; margin-bottom: 3rem; }
-        .intro-note p { max-width: 800px; margin: 1rem auto; color: #555; }
+        header p { 
+            font-size: clamp(1rem, 3vw, 1.2rem); 
+            max-width: 800px;
+            opacity: 0.9; 
+        }
 
-        /* SUMMER FOCUS (NOW AT TOP) */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: var(--section-padding);
+        }
+
+        /* RESOURCE NOTE */
+        .intro-note {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* SUMMER FOCUS (MOVED TO TOP) */
         .summer-focus {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 8px;
-            border: 2px dashed var(--sage-green);
             margin-bottom: 4rem;
+            border: 2px dashed var(--sage-green);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .summer-focus h2 { text-align: center; color: var(--rust); margin-bottom: 1.5rem; }
-        .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .option-box { background: var(--cream); padding: 1.5rem; border-radius: 4px; }
-        .option-box h4 { color: var(--deep-forest); margin-bottom: 0.5rem; }
 
-        /* DROPDOWN PATHS */
-        .path-dropdown {
+        .summer-focus h2 { text-align: center; margin-bottom: 2rem; color: var(--rust); }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .option-box { background: var(--cream); padding: 1.5rem; border-radius: 4px; border-left: 4px solid var(--sage-green); }
+        .option-box h4 { margin-bottom: 0.5rem; color: var(--deep-forest); }
+
+        /* DROPDOWNS & TIMELINES */
+        details {
             background: var(--white);
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            overflow: hidden;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-left: 6px solid var(--sage-green);
         }
-        
+
         summary {
             padding: 1.5rem;
-            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
             list-style: none;
@@ -94,30 +138,55 @@
             align-items: center;
             color: var(--deep-forest);
         }
-        summary::-webkit-details-marker { display: none; }
+
         summary::after { content: '▼'; font-size: 0.8rem; color: var(--gold); }
         details[open] summary::after { content: '▲'; }
 
-        .dropdown-content { padding: 0 1.5rem 1.5rem; border-top: 1px solid #eee; }
+        .dropdown-content { padding: 0 1.5rem 1.5rem; }
 
-        /* TIMELINE STYLE */
-        .timeline { margin-top: 1.5rem; border-left: 2px solid var(--gold); padding-left: 1.5rem; }
-        .timeline-item { margin-bottom: 1.5rem; position: relative; }
-        .timeline-item::before { 
-            content: ''; 
-            position: absolute; 
-            left: -1.95rem; 
-            top: 5px; 
-            width: 12px; 
-            height: 12px; 
-            background: var(--gold); 
-            border-radius: 50%; 
+        .timeline { border-left: 2px solid var(--gold); padding-left: 1.5rem; margin-top: 1rem; }
+        .timeline-step { margin-bottom: 1.5rem; position: relative; }
+        .timeline-step::before {
+            content: ''; position: absolute; left: -1.95rem; top: 6px;
+            width: 12px; height: 12px; background: var(--gold); border-radius: 50%;
         }
-        .time-label { font-weight: bold; color: var(--rust); text-transform: uppercase; font-size: 0.85rem; }
+        .year { font-weight: bold; color: var(--rust); font-size: 0.85rem; text-transform: uppercase; }
 
-        .truth-banner { background: var(--earth-brown); color: white; padding: 4rem 2rem; text-align: center; }
+        /* FOOTER STYLES (MATCHES INDEX PAGE EXACTLY) */
+        #footer-placeholder {
+            background: var(--deep-forest);
+            color: white;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
 
-        @media (max-width: 768px) { :root { --section-padding: 2rem 1rem; } }
+        /* These styles target the elements main.js injects into the placeholder */
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-col h4 { color: var(--sage-green); margin-bottom: 1.2rem; text-transform: uppercase; font-size: 0.9rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; }
+        .footer-col ul li a { color: var(--cream); text-decoration: none; font-size: 0.95rem; opacity: 0.8; }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            :root { --section-padding: 2.5rem 1.2rem; }
+            .footer-grid { text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -132,11 +201,11 @@
     <main class="container">
 
         <section class="intro-note">
-            <h2 style="color: var(--deep-forest);">More Than One Path</h2>
-            <p>
-                This roadmap represents proven paths to ranch ownership, but it is not a rigid rulebook. 
+            <h2 style="color: var(--deep-forest); margin-bottom: 1rem;">More Than One Path</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: #555;">
+                This roadmap represents proven paths to ranch ownership, but it's not the only way. 
                 Many successful owners started with smaller properties or different careers. 
-                <strong>Use this as a flexible resource for your unique journey.</strong>
+                <strong>Use this as a flexible guide for your unique journey.</strong>
             </p>
         </section>
 
@@ -145,104 +214,82 @@
             <div class="option-grid">
                 <div class="option-box">
                     <h4>Option A: Formal Internship</h4>
-                    <p>Mackinac Island (MCEC) or MSU Breeding Barn. Focus on 400+ documented hours.</p>
+                    <p>Mackinac Island (MCEC) or MSU Breeding Barn. Focus on 400+ documented hours and professional references.</p>
                 </div>
                 <div class="option-box">
                     <h4>Option B: Multi-Barn Strategy</h4>
-                    <p>Stack local jobs: Morning feeding at Barn A, Afternoon training at Barn B.</p>
+                    <p>Stack local jobs: Morning feeding at Barn A, Afternoon training at Barn B. More income and broader skills.</p>
                 </div>
                 <div class="option-box">
                     <h4>Option C: The Gap Year</h4>
-                    <p>Work full-time immediately to enter 2026 with $15k+ and massive experience.</p>
+                    <p>Work full-time instead of starting school. Aim to enter 2026 with $15k saved and a massive experience lead.</p>
                 </div>
             </div>
         </section>
 
         <h2 style="text-align: center; margin-bottom: 2rem; color: var(--deep-forest);">🎯 CHOOSE YOUR PATH</h2>
 
-        <details class="path-dropdown">
-            <summary>🎓 Path 1: The College Route (MSU + TIP)</summary>
+        <details>
+            <summary>🎓 Path 1: The College Route (Debt-Free MSU)</summary>
             <div class="dropdown-content">
-                <p style="margin: 1rem 0;">Ideal for building a technical background in Animal Science while staying debt-free via the Tuition Incentive Program.</p>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="time-label">2025 - 2027</span>
-                        <p>Complete Associate Degree at a Michigan CC (Tuition-free via TIP Phase I).</p>
+                    <div class="timeline-step">
+                        <p class="year">2025 - 2027</p>
+                        <p>Complete Associate Degree at Community College using Michigan TIP Phase I.</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2027 - 2029</span>
+                    <div class="timeline-step">
+                        <p class="year">2027 - 2029</p>
                         <p>Transfer to MSU for Animal Science. Work at the MSU Horse Teaching & Research Center.</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2029 - 2033</span>
-                        <p>Work as a Breeding Manager or Assistant Trainer. Save for USDA down payment.</p>
+                    <div class="timeline-step">
+                        <p class="year">2030 - 2034</p>
+                        <p>Gain professional management experience while building credit and ranch savings.</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2034</span>
-                        <p><strong>Goal:</strong> Purchase first 20-40 acre parcel using USDA Beginning Farmer Loan.</p>
+                    <div class="timeline-step">
+                        <p class="year">2035</p>
+                        <p><strong>Ownership Goal:</strong> Purchase land using USDA Beginning Farmer Loan.</p>
                     </div>
                 </div>
             </div>
         </details>
 
-        <details class="path-dropdown" style="border-left-color: var(--gold);">
+        <details style="border-left-color: var(--gold);">
             <summary>🚜 Path 2: The Full-Work Route (Fast Track)</summary>
             <div class="dropdown-content">
-                <p style="margin: 1rem 0;">Focuses on immediate income and maximum hands-on experience. High intensity, faster ownership.</p>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="time-label">2025 - 2026</span>
-                        <p>Secure full-time Groom or Ranch Hand position. Live at home to save 70% of income.</p>
+                    <div class="timeline-step">
+                        <p class="year">2025 - 2026</p>
+                        <p>Full-time ranch hand entry. Live at home to maximize savings (Target: $20k+).</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2027 - 2028</span>
-                        <p>Obtain CDL. Travel for seasonal work in Wyoming/Montana to command higher pay ($4k+/mo).</p>
+                    <div class="timeline-step">
+                        <p class="year">2027 - 2028</p>
+                        <p>Obtain CDL and move into specialized roles (Assistant Trainer or Breeding Assistant).</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2029</span>
-                        <p>Apply for USDA Microloan ($50k) to lease land or buy initial livestock.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2030 - 2031</span>
-                        <p><strong>Goal:</strong> Early land purchase in rural Michigan with $80k+ in cash reserves.</p>
+                    <div class="timeline-step">
+                        <p class="year">2030</p>
+                        <p><strong>Ownership Goal:</strong> Use savings and USDA 0% down programs for early land purchase.</p>
                     </div>
                 </div>
             </div>
         </details>
 
-        <details class="path-dropdown" style="border-left-color: var(--rust);">
-            <summary>⚖️ Path 3: The Hybrid Route (Balanced)</summary>
+        <details style="border-left-color: var(--rust);">
+            <summary>⚖️ Path 3: The Hybrid Route (Maximum Flexibility)</summary>
             <div class="dropdown-content">
-                <p style="margin: 1rem 0;">Combines part-time community college with heavy barn management work. Maximum flexibility.</p>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="time-label">2025 - 2028</span>
-                        <p>Take 2 classes per semester. Work 30+ hours/week at a boarding stable.</p>
+                    <div class="timeline-step">
+                        <p class="year">2025 - 2028</p>
+                        <p>Part-time Community College + 30 hours/week Barn Work. Balance education with income.</p>
                     </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2029</span>
-                        <p>Decide to either finish the degree at MSU or transition to full-time ranch management.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2030 - 2032</span>
-                        <p>Establish "Farm Manager" credentials. Build credit score to 740+.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="time-label">2033</span>
-                        <p><strong>Goal:</strong> Purchase land. Ownership target achieved with a balance of degree and skill.</p>
+                    <div class="timeline-step">
+                        <p class="year">2029</p>
+                        <p>Decision Point: Pivot to full-time management or finish the MSU degree based on market needs.</p>
                     </div>
                 </div>
             </div>
         </details>
 
     </main>
-
-    <section class="truth-banner">
-        <h2>THE HONEST TRUTH</h2>
-        <p style="max-width: 700px; margin: 1.5rem auto;">
-            This is doable. It's not easy—it requires 60-hour weeks and financial discipline—but you have the advantage of starting now. Pick a path for 2025 and work it hard.
-        </p>
-    </section>
 
     <div id="footer-placeholder"></div>
 
