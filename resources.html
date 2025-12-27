@@ -25,13 +25,14 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* PERSISTENT NAVIGATION (Matched to Education Page) */
+        /* PERSISTENT NAVIGATION - MOBILE FIRST */
         nav {
             background: var(--deep-forest);
-            padding: 1.2rem;
+            padding: 1rem;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            flex-wrap: wrap; /* KEY FIX: Allows wrapping on small screens */
+            gap: 1rem 2rem; /* vertical gap smaller than horizontal */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -46,6 +47,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             transition: color 0.3s;
+            white-space: nowrap; /* Prevents text wrapping inside links */
         }
 
         nav a:hover { color: var(--sage-green); }
