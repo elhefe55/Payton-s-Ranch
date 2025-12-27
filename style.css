@@ -160,3 +160,14 @@ footer {
     /* Prevents large text from breaking boxes */
     h1, h2, h3 { overflow-wrap: break-word; }
 }
+/* Increase Header Height for Desktop */
+@media (min-width: 1024px) {
+    header {
+        min-height: 500px; /* Adjust this number to make it taller or shorter */
+        padding: 120px 20px; /* Increases top and bottom spacing */
+    }
+    
+    header h1 {
+        font-size: 4.5rem; /* Makes the title larger on big screens */
+    }
+}
