@@ -6,207 +6,7 @@
     <title>Payton's Ranch | Owning a Ranch Roadmap</title>
     
     <script src="main.js" defer></script>
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --earth-brown: #5C4033;
-            --sage-green: #87a878;
-            --deep-forest: #2d3b26;
-            --cream: #FAF9F6;
-            --white: #ffffff;
-            --gold: #D4AF37;
-            --section-padding: 4rem 2rem;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: var(--earth-brown);
-            background-color: var(--cream);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Styles for the Nav (Shared via main.js) */
-        nav {
-            background: var(--deep-forest);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-
-        nav a:hover { color: var(--sage-green); }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
-                        url('https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 1rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 10vw, 4.5rem);
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 4vw, 1.2rem);
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        /* MAIN CONTENT */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--section-padding);
-        }
-
-        .intro-text {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .intro-text h2 {
-            font-size: clamp(1.8rem, 5vw, 2.2rem);
-            color: var(--deep-forest);
-            margin-bottom: 1rem;
-        }
-
-        /* GRID CARDS */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 2rem;
-            border-top: 5px solid var(--sage-green);
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover { transform: translateY(-5px); }
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
-        .card h3 { color: var(--deep-forest); margin-bottom: 1rem; }
-        .card p { font-size: 0.95rem; margin-bottom: 1.5rem; }
-
-        .card-link {
-            text-decoration: none;
-            background: var(--earth-brown);
-            color: white;
-            padding: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            display: block;
-        }
-
-        /* Footer Styles (Shared via main.js) */
-        footer {
-            background: var(--deep-forest);
-            color: white;
-            padding: 3rem 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .footer-col h4 { color: var(--sage-green); margin-bottom: 1.2rem; text-transform: uppercase; font-size: 0.9rem; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 0.8rem; }
-        .footer-col ul li a { color: var(--cream); text-decoration: none; font-size: 0.95rem; opacity: 0.8; }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        /* MOBILE OPTIMIZATIONS */
-        @media (max-width: 768px) {
-            :root { --section-padding: 2.5rem 1.2rem; }
-            nav { gap: 0.8rem 1.2rem; padding: 0.8rem; }
-            nav a { font-size: 0.75rem; }
-            .hero { height: 50vh; }
-            .footer-grid { text-align: center; }
-            .footer-col { align-items: center; }
-        }
-        /* UNIFIED HEADER STYLE */
-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&q=80&w=2000'); /* Change this per page */
-    background-size: cover;
-    background-position: center;
-    padding: clamp(5rem, 15vh, 8rem) 1.5rem;
-    text-align: center;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-}
-
-header h1 { 
-    font-size: clamp(2rem, 7vw, 3.5rem); 
-    margin-bottom: 1rem; 
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    line-height: 1.2;
-}
-
-header p { 
-    font-size: clamp(1rem, 3vw, 1.2rem); 
-    max-width: 800px;
-    opacity: 0.9; 
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -218,58 +18,40 @@ header p {
     </header>
 
     <main class="container">
-        <section class="intro-text">
-            <h2>The Vision</h2>
-            <p>From riding horses to managing land, your journey requires a plan. Use this guide to navigate your education, gain your first years of experience, and build your future in the ranching industry.</p>
-        </section>
-
-        <section class="intro-text" style="margin-top: -1rem;">
-            <p style="font-size: 0.95rem; opacity: 0.85; max-width: 700px; margin: 0 auto;">
-                A life with horses is rewarding, but it requires discipline, physical effort, and patience.
-                This guide is here to help you explore the dream honestly, build skills over time,
-                and make informed choices that protect your future.
+        <section style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: var(--deep-forest); margin-bottom: 1rem;">The Vision</h2>
+            <p style="max-width: 800px; margin: 0 auto;">
+                From riding horses to managing land, your journey requires a plan. Use this guide to navigate your education, gain your first years of experience, and build your future in the ranching industry.
             </p>
         </section>
 
-        <p style="text-align:center; margin-bottom: 2rem; font-style: italic; opacity: 0.7;">
-            Not sure where to begin? Start with the Roadmap.
-        </p>
-
         <div class="cards-grid">
             <div class="card">
-                <div>
-                    <span class="card-icon">🗺️</span>
-                    <h3>The Roadmap</h3>
-                    <p>A flexible 10-year guide from exploration to professional ranch work.</p>
-                </div>
-                <a href="roadmap.html" class="card-link">See the Timeline</a>
+                <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🗺️</span>
+                <h3>The Roadmap</h3>
+                <p>A flexible 10-year guide from exploration to professional ranch work.</p>
+                <a href="roadmap.html" class="card-link" style="text-decoration:none; background:var(--earth-brown); color:white; padding:1rem; display:block; margin-top:1rem; font-weight:bold; text-transform:uppercase; font-size:0.8rem; text-align:center;">See the Timeline</a>
             </div>
 
-            <div class="card" style="border-top-color: var(--earth-brown);">
-                <div>
-                    <span class="card-icon">🎓</span>
-                    <h3>Education & TIP</h3>
-                    <p>How to use your Michigan Tuition Incentive Program (TIP) for college.</p>
-                </div>
-                <a href="education.html" class="card-link">View Colleges</a>
+            <div class="card" style="border-top: 5px solid var(--earth-brown);">
+                <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🎓</span>
+                <h3>Education & TIP</h3>
+                <p>How to use your Michigan Tuition Incentive Program (TIP) for college.</p>
+                <a href="education.html" class="card-link" style="text-decoration:none; background:var(--earth-brown); color:white; padding:1rem; display:block; margin-top:1rem; font-weight:bold; text-transform:uppercase; font-size:0.8rem; text-align:center;">View Colleges</a>
             </div>
 
-            <div class="card" style="border-top-color: var(--deep-forest);">
-                <div>
-                    <span class="card-icon">🐎</span>
-                    <h3>Working Ranch</h3>
-                    <p>How to find your first job and build skills with minimal experience.</p>
-                </div>
-                <a href="working-ranch.html" class="card-link">Start Working</a>
+            <div class="card" style="border-top: 5px solid var(--deep-forest);">
+                <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🐎</span>
+                <h3>Working Ranch</h3>
+                <p>How to find your first job and build skills with minimal experience.</p>
+                <a href="working-ranch.html" class="card-link" style="text-decoration:none; background:var(--earth-brown); color:white; padding:1rem; display:block; margin-top:1rem; font-weight:bold; text-transform:uppercase; font-size:0.8rem; text-align:center;">Start Working</a>
             </div>
 
-            <div class="card" style="border-top-color: var(--gold);">
-                <div>
-                    <span class="card-icon">🛠️</span>
-                    <h3>Resource Hub</h3>
-                    <p>Direct links to USDA loans, Michigan Farm Bureau, and job boards.</p>
-                </div>
-                <a href="resources.html" class="card-link">Open Toolbox</a>
+            <div class="card" style="border-top: 5px solid var(--gold);">
+                <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🛠️</span>
+                <h3>Resource Hub</h3>
+                <p>Direct links to USDA loans, Michigan Farm Bureau, and job boards.</p>
+                <a href="resources.html" class="card-link" style="text-decoration:none; background:var(--earth-brown); color:white; padding:1rem; display:block; margin-top:1rem; font-weight:bold; text-transform:uppercase; font-size:0.8rem; text-align:center;">Open Toolbox</a>
             </div>
         </div>
     </main>
