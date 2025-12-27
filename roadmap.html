@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Roadmap | Payton's Ranch Dream</title>
+    <title>10-Year Roadmap | Payton's Ranch Dream</title>
     
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* Timeline Specific CSS */
+        /* Timeline Specific Styling to blend with your Original Version */
         .roadmap-container { position: relative; max-width: 900px; margin: 2rem auto; padding-left: 40px; }
         .roadmap-container::after { content: ''; position: absolute; width: 4px; background: var(--sage-green); top: 0; bottom: 0; left: 20px; }
         
@@ -17,7 +18,7 @@
             background: white; 
             padding: 1.5rem; 
             margin-bottom: 2rem; 
-            border-radius: 4px; 
+            border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-left: 5px solid var(--gold);
         }
@@ -29,35 +30,14 @@
         .step h3 { color: var(--deep-forest); font-size: 1.1rem; margin-bottom: 0.5rem; }
         .tag { display: inline-block; background: var(--sage-green); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-bottom: 8px; }
 
-        /* Dropdown Styling */
-        details {
-            background: var(--white);
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            padding: 1rem;
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--earth-brown);
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: '▼'; font-size: 0.8rem; color: var(--sage-green); }
-        details[open] summary::after { content: '▲'; }
-
         @media (min-width: 768px) {
             .roadmap-container { padding-left: 0; }
             .roadmap-container::after { left: 50%; margin-left: -2px; }
-            .step { width: 45%; margin-left: 0; margin-bottom: 3rem; }
+            .step { width: 45%; margin-left: 0; }
             .step:nth-child(even) { margin-left: 55%; border-left: 5px solid var(--earth-brown); }
-            .step:nth-child(even)::before { left: -7.5%; }
+            .step:nth-child(even)::before { left: -7.2%; }
             .step:nth-child(odd) { text-align: right; }
-            .step:nth-child(odd)::before { right: -7.5%; left: auto; }
+            .step:nth-child(odd)::before { right: -7.2%; left: auto; }
         }
     </style>
 </head>
@@ -65,9 +45,9 @@
 
     <div id="nav-placeholder"></div>
 
-    <header style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?q=80&w=2000');">
-        <h1>The Career Roadmap</h1>
-        <p>Your 10-Year Strategy from Michigan Student to Ranch Owner</p>
+    <header style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1726801561954-52fc19008cf6?auto=format&fit=crop&q=80&w=2000'); background-position: center 40%;">
+        <h1>Payton's Ranch Roadmap</h1>
+        <p>From Michigan High School to Sustainable Ranch Ownership</p>
     </header>
 
     <main class="container">
@@ -78,68 +58,144 @@
                 <div class="step">
                     <span class="tag">YEAR 1-2</span>
                     <h3>High School Launch</h3>
-                    <p>Volunteer locally and secure your TIP funding eligibility.</p>
+                    <p>Focus on local volunteer work and securing your TIP funding eligibility.</p>
                 </div>
                 <div class="step">
                     <span class="tag">YEAR 3-4</span>
                     <h3>The Skills Pivot</h3>
-                    <p>Choose one of the paths below to specialize your ranching toolkit.</p>
+                    <p>Choose your Path: College, Work, or a Hybrid of both.</p>
                 </div>
                 <div class="step">
                     <span class="tag">YEAR 5-8</span>
-                    <h3>The Professional Grind</h3>
-                    <p>Move toward leadership roles like Head Wrangler or Assistant Manager.</p>
+                    <h3>Professional Grind</h3>
+                    <p>Move into leadership roles like Head Wrangler or Assistant Manager.</p>
                 </div>
                 <div class="step">
                     <span class="tag">YEAR 10+</span>
-                    <h3>Ownership & USDA</h3>
-                    <p>Apply for a USDA Beginning Farmer Loan for your own land.</p>
+                    <h3>Ownership</h3>
+                    <p>Leverage your experience to apply for USDA Beginning Farmer Loans.</p>
                 </div>
             </div>
         </section>
 
-        
+        <section class="intro-note">
+            <h2 style="color: var(--deep-forest); margin-bottom: 1rem;">More Than One Path</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: #555;">
+                This roadmap represents proven paths to ranch ownership. Whether you choose formal education or aggressive work, the goal remains the same: <strong>Own a ranch or work on one in a professional capacity.</strong>
+            </p>
+        </section>
 
-        <hr style="border: 0; height: 1px; background: #ddd; margin-bottom: 4rem;">
-
-        <section>
-            <h2 style="color: var(--deep-forest); margin-bottom: 2rem;">Choose Your Path</h2>
-            
-            <details>
-                <summary>Path A: The Academic Specialist</summary>
-                <div style="padding-top: 1rem; font-size: 0.95rem; color: #444;">
-                    <p><strong>Focus:</strong> Breeding, technical horsemanship, and facility management.</p>
-                    <ul>
-                        <li>Use TIP for a 2-year MSU certificate.</li>
-                        <li>Work as a vet tech or breeding assistant.</li>
-                        <li>Ideal for long-term managerial stability.</li>
-                    </ul>
+        <section class="summer-focus" style="background: white; padding: 2rem; border-radius: 8px; border: 2px dashed var(--sage-green); margin-bottom: 4rem;">
+            <h2 style="color: var(--rust); text-align: center; margin-bottom: 1.5rem;">🚀 RIGHT NOW: SUMMER 2025</h2>
+            <div class="cards-grid">
+                <div class="option-box">
+                    <h4>Option A: Formal Internship</h4>
+                    <p>Mackinac Island (MCEC) or MSU Breeding Barn. Focus on 400+ documented hours.</p>
                 </div>
-            </details>
-
-            <details>
-                <summary>Path B: The Working Wrangler</summary>
-                <div style="padding-top: 1rem; font-size: 0.95rem; color: #444;">
-                    <p><strong>Focus:</strong> Guest relations, trail management, and outdoor tourism.</p>
-                    <ul>
-                        <li>Skip formal college and head West for summer contracts.</li>
-                        <li>Gain massive "hours in the saddle" experience.</li>
-                        <li>Includes room and board (low expenses).</li>
-                    </ul>
+                <div class="option-box">
+                    <h4>Option B: Multi-Barn Strategy</h4>
+                    <p>Stack local jobs: Morning feeding at Barn A, Afternoon training at Barn B.</p>
                 </div>
-            </details>
-
-            <details>
-                <summary>Path C: The Hybrid Strategy</summary>
-                <div style="padding-top: 1rem; font-size: 0.95rem; color: #444;">
-                    <p><strong>Focus:</strong> The most well-rounded approach to ownership.</p>
-                    <ul>
-                        <li>MSU in the winter, Wrangling in the summer.</li>
-                        <li>Builds the fastest resume for bank loan officers.</li>
-                        <li>Balances technical science with grit and field experience.</li>
-                    </ul>
+                <div class="option-box">
+                    <h4>Option C: The Gap Year</h4>
+                    <p>Work full-time immediately. Aim to enter 2026 with $15k saved.</p>
                 </div>
-            </details>
+            </div>
+        </section>
+
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--deep-forest);">🎯 CHOOSE YOUR PATH</h2>
+
+        <details>
+            <summary>🎓 Path 1: The College Route (MSU Animal Science)</summary>
+            <div class="dropdown-content" style="padding: 1.5rem;">
+                <div class="timeline-step">
+                    <span class="year-label">2025 - 2027: Foundation</span>
+                    <p>Associate Degree at Community College using <strong>Michigan TIP Phase I</strong>.</p>
+                    <div class="milestone-grid">
+                        <div class="milestone-box">
+                            <h5>Skills to Master</h5>
+                            <ul><li>Equine Anatomy</li><li>Farm Accounting</li><li>Pasture Management</li></ul>
+                        </div>
+                        <div class="milestone-box">
+                            <h5>Money Goals</h5>
+                            <ul><li>Save $8k-$12k</li><li>Build 700+ Credit Score</li></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <span class="year-label">2027 - 2029: Specialization</span>
+                    <p>Transfer to MSU. Work at the MSU Horse Teaching & Research Center.</p>
+                    <div class="milestone-grid">
+                        <div class="milestone-box">
+                            <h5>Skills to Master</h5>
+                            <ul><li>Reproductive Tech</li><li>Staff Leadership</li><li>Public Speaking</li></ul>
+                        </div>
+                        <div class="milestone-box">
+                            <h5>Money Goals</h5>
+                            <ul><li>Graduate Debt-Free</li><li>Secure 3 Mentors</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details style="border-left-color: var(--gold);">
+            <summary>🚜 Path 2: The Work Route (Fast Track Ownership)</summary>
+            <div class="dropdown-content" style="padding: 1.5rem;">
+                <div class="timeline-step">
+                    <span class="year-label">2025 - 2027: The Grind</span>
+                    <p>Full-time Ranch Hand. Live at home or in provided housing.</p>
+                    <div class="milestone-grid">
+                        <div class="milestone-box">
+                            <h5>Skills to Master</h5>
+                            <ul><li>CDL Truck/Trailer</li><li>Fence/Facility Repair</li><li>Heavy Machinery</li></ul>
+                        </div>
+                        <div class="milestone-box">
+                            <h5>Money Goals</h5>
+                            <ul><li>Save $30k+</li><li>Open High-Yield Savings</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details style="border-left-color: var(--rust);">
+            <summary>⚖️ Path 3: The Hybrid Route (Flexibility First)</summary>
+            <div class="dropdown-content" style="padding: 1.5rem;">
+                <p>Spend 2 years working 30hrs/week while taking 2 online classes per semester.</p>
+                <div class="milestone-grid">
+                    <div class="milestone-box">
+                        <h5>2026 Goal</h5>
+                        <ul><li>Complete 4 Business Classes</li><li>$15k Saved</li></ul>
+                    </div>
+                    <div class="milestone-box">
+                        <h5>The Pivot</h5>
+                        <ul><li>Decide: Finish Degree?</li><li>OR: Go Pro Work?</li></ul>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 2rem; margin-top: 4rem;">❓ Roadmap FAQ</h2>
+            <div class="card" style="margin-bottom: 1rem;">
+                <h4>What if I don't get into MSU?</h4>
+                <p>Start at Community College. MSU accepts almost all transfer credits from MI community colleges.</p>
+            </div>
+            <div class="card" style="margin-bottom: 1rem;">
+                <h4>What if I can't save $25,000?</h4>
+                <p>Look into leasing land first. You can lease 10 acres while you keep saving.</p>
+            </div>
+        </section>
+
+        <section class="action-guide" style="background: var(--deep-forest); color: white; padding: 2rem; border-radius: 8px; margin-top: 4rem;">
+            <h2>🐴 QUICK ACTION GUIDE: This Month</h2>
+            <ul style="list-style: none; padding-top: 1rem;">
+                <li style="margin-bottom: 10px;">▢ <strong>Secure Summer Work:</strong> Call 3 local barns this week.</li>
+                <li style="margin-bottom: 10px;">▢ <strong>Open the "Ranch Fund":</strong> Set up a separate savings account.</li>
+                <li style="margin-bottom: 10px;">▢ <strong>Log Your Hours:</strong> Start a notebook tracking horse handling time.</li>
+                <li style="margin-bottom: 10px;">▢ <strong>Confirm TIP:</strong> Ensure your counselor has your paperwork ready.</li>
+            </ul>
         </section>
 
     </main>
