@@ -6,302 +6,42 @@
     <title>Education & TIP | Payton's Ranch Dream</title>
 
     <script src="main.js" defer></script>
-
-    <style>
-        /* CSS RESET & VARIABLES */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --earth-brown: #5C4033;
-            --sage-green: #87a878;
-            --deep-forest: #2d3b26;
-            --cream: #FAF9F6;
-            --white: #ffffff;
-            --gold: #D4AF37;
-            --section-padding: 4rem 2rem;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: var(--earth-brown);
-            background-color: var(--cream);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Nav Styles (Shared via main.js) */
-        nav {
-            background: var(--deep-forest);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover { color: var(--sage-green); }
-
-        /* HEADER AREA - Unique to Education Page */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://plus.unsplash.com/premium_photo-1661598070385-0da2bfa2efd8?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            padding: clamp(4rem, 15vh, 6rem) 1.5rem;
-            text-align: center;
-            color: var(--white);
-        }
-
-        header h1 { font-size: clamp(1.8rem, 7vw, 3rem); margin-bottom: 1rem; }
-        header p { font-size: clamp(0.9rem, 4vw, 1.1rem); opacity: 0.9; }
-
-        /* MAIN CONTENT */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: var(--section-padding);
-        }
-
-        .section-box {
-            background: var(--white);
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            border-top: 5px solid var(--sage-green);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .section-box h2 { 
-            color: var(--deep-forest); 
-            margin-bottom: 1.5rem; 
-            border-bottom: 2px solid var(--cream); 
-            padding-bottom: 0.5rem;
-            font-size: clamp(1.3rem, 5vw, 1.8rem);
-        }
-
-        /* RESPONSIVE TIP TABLE */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-            background: var(--white);
-        }
-
-        table th, table td {
-            padding: 1.2rem 1rem;
-            text-align: left;
-            border: 1px solid #ddd;
-            font-size: 0.95rem;
-        }
-
-        table th { background: var(--deep-forest); color: white; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-
-        /* COLLEGE CARDS */
-        .college-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .college-card {
-            background: var(--cream);
-            padding: 2rem;
-            border-left: 5px solid var(--gold);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .college-card h3 { color: var(--earth-brown); margin: 0.8rem 0; font-size: 1.2rem; }
-        .college-card p { font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1; }
-        
-        .tag {
-            background: var(--sage-green);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            font-size: 0.7rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 3px;
-            display: inline-block;
-            width: fit-content;
-        }
-
-        .card-link {
-            color: var(--deep-forest);
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: gap 0.3s;
-        }
-
-        .card-link:hover { gap: 10px; color: var(--sage-green); }
-
-        /* CHECKLIST */
-        .checklist { list-style: none; }
-        .checklist li {
-            margin-bottom: 1.2rem;
-            padding-left: 1.5rem;
-            position: relative;
-            font-size: 0.95rem;
-        }
-        .checklist li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--sage-green);
-            font-weight: bold;
-        }
-
-        /* Footer Styles (Shared via main.js) */
-        footer {
-            background: var(--deep-forest);
-            color: white;
-            padding: 3rem 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .footer-col h4 {
-            color: var(--sage-green);
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 0.8rem; }
-        .footer-col ul li a {
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 0.95rem;
-            opacity: 0.8;
-            display: inline-block;
-        }
-
-        .footer-col ul li a:hover { opacity: 1; color: var(--white); }
-
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        /* --- MOBILE OPTIMIZATIONS --- */
-        @media (max-width: 768px) {
-            :root { --section-padding: 2.5rem 1.2rem; }
-            nav { gap: 0.8rem 1.2rem; padding: 0.8rem; }
-            nav a { font-size: 0.75rem; }
-            .section-box { padding: 1.5rem; }
-            .college-grid { grid-template-columns: 1fr; }
-            .card-link {
-                background: var(--deep-forest);
-                color: white;
-                padding: 1rem;
-                justify-content: center;
-                border-radius: 4px;
-            }
-            .footer-grid { text-align: center; }
-            .footer-col { display: flex; flex-direction: column; align-items: center; }
-        }
-        /* UNIFIED HEADER STYLE */
-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('https://plus.unsplash.com/premium_photo-1661598070385-0da2bfa2efd8?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Change this per page */
-    background-size: cover;
-    background-position: center;
-    padding: clamp(5rem, 15vh, 8rem) 1.5rem;
-    text-align: center;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-}
-
-header h1 { 
-    font-size: clamp(2rem, 7vw, 3.5rem); 
-    margin-bottom: 1rem; 
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    line-height: 1.2;
-}
-
-header p { 
-    font-size: clamp(1rem, 3vw, 1.2rem); 
-    max-width: 800px;
-    opacity: 0.9; 
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="nav-placeholder"></div>
 
-    <header>
+    <header style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://plus.unsplash.com/premium_photo-1661598070385-0da2bfa2efd8?q=80&w=2000');">
         <h1>Education & The TIP Advantage</h1>
         <p>Turning Michigan State Aid into Your Ranching Future</p>
     </header>
 
     <main class="container">
 
-        <section class="section-box">
-            <h2>The TIP Breakdown</h2>
+        <section class="card" style="border-top: 5px solid var(--sage-green); margin-bottom: 3rem;">
+            <h2 style="color: var(--deep-forest); margin-bottom: 1.5rem;">The TIP Breakdown</h2>
             <p>The <strong>Tuition Incentive Program (TIP)</strong> is a Michigan-specific scholarship for students with qualifying Medicaid history. For Payton, this is a way to get a professional ranching education without the debt.</p>
             
-            <div class="table-container">
-                <table>
+            <div style="width: 100%; overflow-x: auto; margin: 1.5rem 0; border: 1px solid #ddd; border-radius: 4px;">
+                <table style="width: 100%; border-collapse: collapse; min-width: 500px; background: white;">
                     <thead>
-                        <tr>
-                            <th>Phase</th>
-                            <th>Academic Goal</th>
-                            <th>What It Covers</th>
+                        <tr style="background: var(--deep-forest); color: white; text-align: left;">
+                            <th style="padding: 1rem; font-size: 0.8rem; text-transform: uppercase;">Phase</th>
+                            <th style="padding: 1rem; font-size: 0.8rem; text-transform: uppercase;">Academic Goal</th>
+                            <th style="padding: 1rem; font-size: 0.8rem; text-transform: uppercase;">What It Covers</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>Phase I</strong></td>
-                            <td>Associate Degree or Certificate</td>
-                            <td>Full Tuition & Mandatory Fees (up to 80 credits)</td>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1rem;"><strong>Phase I</strong></td>
+                            <td style="padding: 1rem;">Associate Degree or Certificate</td>
+                            <td style="padding: 1rem;">Full Tuition & Mandatory Fees (up to 80 credits)</td>
                         </tr>
                         <tr>
-                            <td><strong>Phase II</strong></td>
-                            <td>Bachelor's Degree</td>
-                            <td>$500 per semester (max $2,000 total)</td>
+                            <td style="padding: 1rem;"><strong>Phase II</strong></td>
+                            <td style="padding: 1rem;">Bachelor's Degree</td>
+                            <td style="padding: 1rem;">$500 per semester (max $2,000 total)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -309,40 +49,49 @@ header p {
             <p style="font-size: 0.85rem; font-style: italic; color: #666;">*Note: You must begin using TIP within 4 years of high school graduation.</p>
         </section>
 
-        <section class="section-box" style="border-top-color: var(--gold);">
-            <h2>Top Michigan Programs for Payton</h2>
-            <p>These institutions offer top-tier Equine and Agricultural programs and accept TIP Phase I.</p>
+        <section class="card" style="border-top: 5px solid var(--gold); margin-bottom: 3rem;">
+            <h2 style="color: var(--deep-forest); margin-bottom: 1rem;">Top Michigan Programs</h2>
+            <p style="margin-bottom: 2rem;">These institutions offer top-tier Equine and Agricultural programs and accept TIP Phase I.</p>
 
-            <div class="college-grid">
-                <div class="college-card">
-                    <span class="tag">The Gold Standard</span>
-                    <h3>Michigan State University (IAT)</h3>
-                    <p>The Institute of Agricultural Technology offers a <strong>Horse Management Certificate</strong>. You work directly at the MSU Horse Teaching and Research Center.</p>
-                    <a href="https://www.canr.msu.edu/iat/horse_management" target="_blank" class="card-link">View Program Details →</a>
+            <div class="cards-grid">
+                <div class="option-box" style="display: flex; flex-direction: column; border-left: 5px solid var(--gold);">
+                    <span style="background: var(--sage-green); color: white; padding: 0.3rem 0.8rem; font-size: 0.7rem; font-weight: bold; width: fit-content; border-radius: 3px; margin-bottom: 1rem;">THE GOLD STANDARD</span>
+                    <h3 style="margin-bottom: 1rem;">Michigan State University (IAT)</h3>
+                    <p style="flex-grow: 1; font-size: 0.95rem; margin-bottom: 1.5rem;">The Institute of Agricultural Technology offers a <strong>Horse Management Certificate</strong>. You work directly at the MSU Horse Research Center.</p>
+                    <a href="https://www.canr.msu.edu/iat/horse_management" target="_blank" style="text-decoration: none; color: var(--deep-forest); font-weight: bold; font-size: 0.9rem;">View Program →</a>
                 </div>
 
-                <div class="college-card">
-                    <span class="tag">Business Focused</span>
-                    <h3>Northwestern Michigan College</h3>
-                    <p>Located in Traverse City. Their <strong>Agricultural Operations</strong> program is perfect for learning land management and ranch business.</p>
-                    <a href="https://www.nmc.edu/programs/academic-programs/agriculture/" target="_blank" class="card-link">View NMC Ag →</a>
+                <div class="option-box" style="display: flex; flex-direction: column; border-left: 5px solid var(--gold);">
+                    <span style="background: var(--sage-green); color: white; padding: 0.3rem 0.8rem; font-size: 0.7rem; font-weight: bold; width: fit-content; border-radius: 3px; margin-bottom: 1rem;">BUSINESS FOCUSED</span>
+                    <h3 style="margin-bottom: 1rem;">Northwestern Michigan College</h3>
+                    <p style="flex-grow: 1; font-size: 0.95rem; margin-bottom: 1.5rem;">Located in Traverse City. Their <strong>Agricultural Operations</strong> program is perfect for learning land management and ranch business.</p>
+                    <a href="https://www.nmc.edu/programs/academic-programs/agriculture/" target="_blank" style="text-decoration: none; color: var(--deep-forest); font-weight: bold; font-size: 0.9rem;">View NMC Ag →</a>
                 </div>
 
-                <div class="college-card">
-                    <span class="tag">Local Partnership</span>
-                    <h3>Montcalm Community College</h3>
-                    <p>Offers an <strong>Agricultural Operations</strong> associate degree in partnership with MSU, keeping you close to home while earning a world-class credential.</p>
+                <div class="option-box" style="display: flex; flex-direction: column; border-left: 5px solid var(--gold);">
+                    <span style="background: var(--sage-green); color: white; padding: 0.3rem 0.8rem; font-size: 0.7rem; font-weight: bold; width: fit-content; border-radius: 3px; margin-bottom: 1rem;">LOCAL PARTNERSHIP</span>
+                    <h3 style="margin-bottom: 1rem;">Montcalm Community College</h3>
+                    <p style="flex-grow: 1; font-size: 0.95rem; margin-bottom: 1.5rem;">Offers an Associate Degree in partnership with MSU, keeping you close to home while earning a world-class credential.</p>
+                    <a href="#" style="text-decoration: none; color: var(--deep-forest); font-weight: bold; font-size: 0.9rem;">View Montcalm →</a>
                 </div>
             </div>
         </section>
 
-        <section class="section-box">
-            <h2>The "Must-Do" Checklist</h2>
-            <ul class="checklist">
-                <li><strong>File the FAFSA:</strong> Even with TIP, you must file a FAFSA every single year.</li>
-                <li><strong>Verify Eligibility:</strong> Check your status on the <a href="https://www.michigan.gov/mistudentaid" target="_blank">MiSSG Student Portal</a>.</li>
-                <li><strong>Maintain a 2.0 GPA:</strong> To keep your funding, you must stay in good academic standing.</li>
-                <li><strong>Network:</strong> While in school, join the "Young Farmers" program through the Michigan Farm Bureau.</li>
+        <section class="card" style="border-top: 5px solid var(--deep-forest);">
+            <h2 style="color: var(--deep-forest); margin-bottom: 1.5rem;">The "Must-Do" Checklist</h2>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--sage-green); font-weight: bold;">✓</span>
+                    <strong>File the FAFSA:</strong> Even with TIP, you must file a FAFSA every single year.
+                </li>
+                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--sage-green); font-weight: bold;">✓</span>
+                    <strong>Verify Eligibility:</strong> Check your status on the <a href="https://www.michigan.gov/mistudentaid" target="_blank" style="color: var(--earth-brown);">MiSSG Student Portal</a>.
+                </li>
+                <li style="margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--sage-green); font-weight: bold;">✓</span>
+                    <strong>Maintain a 2.0 GPA:</strong> To keep your funding, you must stay in good academic standing.
+                </li>
             </ul>
         </section>
 

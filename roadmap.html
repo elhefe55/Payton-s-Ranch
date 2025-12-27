@@ -6,219 +6,40 @@
     <title>10-Year Roadmap | Payton's Ranch Dream</title>
     
     <script src="main.js" defer></script>
-
-    <style>
-        /* CSS RESET & VARIABLES */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --earth-brown: #5C4033;
-            --sage-green: #87a878;
-            --deep-forest: #2d3b26;
-            --cream: #FAF9F6;
-            --white: #ffffff;
-            --gold: #D4AF37;
-            --rust: #A84B2B;
-            --section-padding: 4rem 2rem;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: var(--earth-brown);
-            background-color: var(--cream);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* NAVIGATION (Unified with Index) */
-        #nav-placeholder {
-            background: var(--deep-forest);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        nav {
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover { color: var(--sage-green); }
-
-        /* HEADER */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://images.unsplash.com/photo-1726801561954-52fc19008cf6?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            padding: clamp(5rem, 15vh, 8rem) 1.5rem;
-            text-align: center;
-            color: var(--white);
-        }
-
-        header h1 { font-size: clamp(2rem, 7vw, 3.5rem); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); margin-bottom: 1rem; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: var(--section-padding); }
-
-        /* SUMMER BOX - MOBILE OPTIMIZED */
-        .summer-focus {
-            background: var(--white);
-            padding: clamp(1.5rem, 5vw, 3rem);
-            border-radius: 8px;
-            margin-bottom: 4rem;
-            border: 2px dashed var(--sage-green);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .summer-focus h2 { text-align: center; margin-bottom: 2rem; color: var(--rust); }
-
-        .option-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .option-box { 
-            background: var(--cream); 
-            padding: 1.5rem; 
-            border-radius: 4px; 
-            border-left: 4px solid var(--sage-green);
-            word-wrap: break-word; /* Prevents text overflow */
-        }
-
-        /* PATHS & MILESTONES */
-        details {
-            background: var(--white);
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-left: 8px solid var(--sage-green);
-            overflow: hidden;
-        }
-        summary {
-            padding: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--deep-forest);
-        }
-        summary::after { content: '▼'; font-size: 0.8rem; color: var(--gold); }
-
-        .dropdown-content { padding: 0 1.5rem 1.5rem; }
-
-        .milestone-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-            background: var(--cream);
-            padding: 1.2rem;
-            border-radius: 4px;
-        }
-        .milestone-box h5 { color: var(--rust); text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.5rem; border-bottom: 1px solid #ddd; }
-        .milestone-box ul { list-style: none; font-size: 0.9rem; }
-        .milestone-box li::before { content: "✓ "; color: var(--sage-green); font-weight: bold; }
-
-        .timeline-step { padding: 1.5rem 0; border-bottom: 1px solid #eee; }
-        .timeline-step:last-child { border-bottom: none; }
-        .year-label { 
-            display: inline-block;
-            background: var(--deep-forest); 
-            color: white; 
-            padding: 2px 10px; 
-            border-radius: 4px; 
-            font-size: 0.8rem; 
-            margin-bottom: 0.5rem;
-        }
-
-        /* FAQ & ACTION GUIDE */
-        .faq-item { margin-bottom: 1.5rem; background: var(--white); padding: 1.5rem; border-radius: 4px; border-top: 3px solid var(--gold); }
-        .action-guide {
-            background: var(--deep-forest);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 4rem;
-        }
-        .action-list { list-style: none; margin-top: 1rem; }
-        .action-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; font-size: 0.95rem; }
-        .action-list li::before { content: "▢"; position: absolute; left: 0; color: var(--gold); }
-
-        /* FOOTER (Matched to Index Requirements) */
-        #footer-placeholder {
-            background: var(--deep-forest);
-            color: white;
-            padding: 3rem 1.5rem;
-            margin-top: 4rem;
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .footer-col h4 { color: var(--sage-green); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; }
-        .footer-col ul { list-style: none; }
-        .footer-col a { color: var(--white); text-decoration: none; opacity: 0.8; font-size: 0.9rem; }
-        .copyright { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.6; }
-
-        /* MOBILE ADJUSTMENTS */
-        @media (max-width: 600px) {
-            :root { --section-padding: 2rem 1rem; }
-            .summer-focus { padding: 1.5rem 1rem; }
-            .option-grid, .milestone-grid { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.2rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="nav-placeholder"></div>
 
     <header>
-        <h1>Payton's Ranch Roadmap</h1>
+        <h1>The Roadmap</h1>
         <p>From Michigan High School to Sustainable Ranch Ownership</p>
     </header>
 
     <main class="container">
 
-        <section class="intro-note">
+        <section style="text-align: center; margin-bottom: 4rem;">
             <h2 style="color: var(--deep-forest); margin-bottom: 1rem;">More Than One Path</h2>
-            <p style="max-width: 800px; margin: 0 auto; color: #555;">
+            <p style="max-width: 800px; margin: 0 auto;">
                 This roadmap represents proven paths to ranch ownership. Whether you choose formal education or aggressive work, the goal remains the same: <strong>Ownership or professional management.</strong>
             </p>
         </section>
 
-        <section class="summer-focus">
-            <h2>🚀 RIGHT NOW: SUMMER 2025</h2>
+        <section class="card" style="border: 2px dashed var(--sage-green); margin-bottom: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--rust);">🚀 RIGHT NOW: SUMMER 2025</h2>
             <div class="option-grid">
-                <div class="option-box">
-                    <h4>Option A: Formal Internship</h4>
-                    <p>Mackinac Island (MCEC) or MSU Breeding Barn. Focus on 400+ documented hours and professional references.</p>
+                <div class="option-box" style="background: var(--cream); border-left: 4px solid var(--sage-green);">
+                    <h4 style="margin-bottom:0.5rem;">Option A: Formal Internship</h4>
+                    <p style="font-size:0.95rem;">Mackinac Island (MCEC) or MSU Breeding Barn. Focus on 400+ hours and references.</p>
                 </div>
-                <div class="option-box">
-                    <h4>Option B: Multi-Barn Strategy</h4>
-                    <p>Stack local jobs: Morning feeding at Barn A, Afternoon training at Barn B. Broadens your skill network quickly.</p>
+                <div class="option-box" style="background: var(--cream); border-left: 4px solid var(--sage-green);">
+                    <h4 style="margin-bottom:0.5rem;">Option B: Multi-Barn Strategy</h4>
+                    <p style="font-size:0.95rem;">Stack local jobs: Morning feeding at Barn A, Afternoon training at Barn B.</p>
                 </div>
-                <div class="option-box">
-                    <h4>Option C: The Gap Year</h4>
-                    <p>Work full-time immediately. Aim to enter 2026 with $15k saved and a massive experience lead over college peers.</p>
+                <div class="option-box" style="background: var(--cream); border-left: 4px solid var(--sage-green);">
+                    <h4 style="margin-bottom:0.5rem;">Option C: The Gap Year</h4>
+                    <p style="font-size:0.95rem;">Work full-time immediately. Aim for $15k saved by 2026.</p>
                 </div>
             </div>
         </section>
@@ -227,78 +48,37 @@
 
         <details>
             <summary>🎓 Path 1: The College Route (MSU Animal Science)</summary>
-            <div class="dropdown-content">
-                <div class="timeline-step">
-                    <span class="year-label">2025 - 2027: Foundation</span>
-                    <p>Associate Degree at Community College using <strong>Michigan TIP Phase I</strong>.</p>
-                    <div class="milestone-grid">
-                        <div class="milestone-box">
-                            <h5>Skills</h5>
-                            <ul><li>Equine Anatomy</li><li>Farm Accounting</li><li>Pasture Management</li></ul>
+            <div style="padding: 1.5rem;">
+                <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                    <span class="year-label" style="background:var(--deep-forest); color:white; padding:2px 10px; border-radius:4px; font-size:0.8rem;">2025 - 2027: Foundation</span>
+                    <p style="margin-top:0.5rem;">Associate Degree at Community College using <strong>Michigan TIP Phase I</strong>.</p>
+                    <div class="milestone-grid" style="margin-top:1rem;">
+                        <div class="milestone-box" style="padding:1rem;">
+                            <h5 style="color:var(--rust); font-size:0.75rem; border-bottom:1px solid #ddd; margin-bottom:0.5rem;">SKILLS</h5>
+                            <ul style="list-style:none; font-size:0.9rem;"><li>✓ Equine Anatomy</li><li>✓ Farm Accounting</li></ul>
                         </div>
-                        <div class="milestone-box">
-                            <h5>Money</h5>
-                            <ul><li>Save $8k-$12k</li><li>700+ Credit Score</li></ul>
+                        <div class="milestone-box" style="padding:1rem;">
+                            <h5 style="color:var(--rust); font-size:0.75rem; border-bottom:1px solid #ddd; margin-bottom:0.5rem;">MONEY</h5>
+                            <ul style="list-style:none; font-size:0.9rem;"><li>✓ Save $8k-$12k</li><li>✓ 700+ Credit Score</li></ul>
                         </div>
                     </div>
-                </div>
-                <div class="timeline-step">
-                    <span class="year-label">2027 - 2029: Specialization</span>
-                    <p>Transfer to MSU. Work at the MSU Horse Teaching & Research Center.</p>
                 </div>
             </div>
         </details>
 
         <details style="border-left-color: var(--gold);">
             <summary>🚜 Path 2: The Work Route (Fast Track)</summary>
-            <div class="dropdown-content">
-                <div class="timeline-step">
-                    <span class="year-label">2025 - 2027: The Grind</span>
-                    <p>Full-time Ranch Hand. Live at home to maximize every dollar.</p>
-                    <div class="milestone-grid">
-                        <div class="milestone-box">
-                            <h5>Skills</h5>
-                            <ul><li>CDL Truck/Trailer</li><li>Facility Repair</li><li>Heavy Machinery</li></ul>
-                        </div>
-                        <div class="milestone-box">
-                            <h5>Money</h5>
-                            <ul><li>Save $30k+</li><li>High-Yield Savings</li></ul>
-                        </div>
-                    </div>
-                </div>
+            <div style="padding: 1.5rem;">
+                <p>Full-time Ranch Hand. Focus on heavy machinery and facility repair while living at home to maximize savings.</p>
             </div>
         </details>
 
-        <details style="border-left-color: var(--rust);">
-            <summary>⚖️ Path 3: The Hybrid Route (Flexibility First)</summary>
-            <div class="dropdown-content">
-                <p>Spend 2 years working 30hrs/week while taking 2 online classes per semester. Decide later if you want the full degree.</p>
-            </div>
-        </details>
-
-        <section class="faq-section">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--deep-forest);">❓ Roadmap FAQ</h2>
-            <div class="faq-item">
-                <h4>What if I don't get into MSU?</h4>
-                <p>Start at Community College. It's cheaper, and credits transfer easily. You can still use TIP money for the first two years!</p>
-            </div>
-            <div class="faq-item">
-                <h4>What if I can't save $25,000?</h4>
-                <p>Look into leasing land first. You can lease a small acreage to start your business while you keep saving for a down payment.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Do I really need a CDL?</h4>
-                <p>It’s a "Superpower" skill. It allows you to haul hay and horses safely, saving thousands in transport costs over your career.</p>
-            </div>
-        </section>
-
-        <section class="action-guide">
-            <h2 style="color: var(--sage-green);">🐴 QUICK ACTION GUIDE: This Month</h2>
-            <ul class="action-list">
-                <li><strong>Secure Summer Work:</strong> Call 3 local barns this week to ask about summer shifts.</li>
-                <li><strong>Open the "Ranch Fund":</strong> Set up a separate savings account today.</li>
-                <li><strong>Log Your Hours:</strong> Track every hour spent handling horses for your future resume.</li>
-                <li><strong>Confirm TIP:</strong> Talk to your school counselor about Michigan TIP paperwork.</li>
+        <section style="background: var(--deep-forest); color: white; padding: 2rem; border-radius: 8px; margin-top: 4rem;">
+            <h2 style="color: var(--sage-green); margin-bottom:1rem;">🐴 QUICK ACTION GUIDE</h2>
+            <ul style="list-style: none;">
+                <li style="margin-bottom:1rem;"><strong>Secure Summer Work:</strong> Call 3 local barns this week.</li>
+                <li style="margin-bottom:1rem;"><strong>Open the "Ranch Fund":</strong> Set up a separate savings account today.</li>
+                <li style="margin-bottom:1rem;"><strong>Confirm TIP:</strong> Talk to your counselor about Michigan TIP paperwork.</li>
             </ul>
         </section>
 
