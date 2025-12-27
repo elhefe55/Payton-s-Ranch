@@ -52,18 +52,26 @@
 
         nav a:hover { color: var(--sage-green); }
 
-        /* HEADER AREA (Updated to Local Image) */
+        /* HEADER AREA */
         header {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('resource.cover.jpg'); /* Local file reference */
+                        url('resource.cover.jpg');
             background-size: cover;
             background-position: center;
-            padding: 6rem 2rem;
+            padding: clamp(4rem, 12vh, 6rem) 1.5rem; /* Responsive padding */
             text-align: center;
             color: var(--white);
         }
 
-        header h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        header h1 { 
+            font-size: clamp(2rem, 8vw, 3rem); /* Scales with screen size */
+            margin-bottom: 1rem; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+        }
+
+        header p {
+            font-size: clamp(0.9rem, 4vw, 1.1rem);
+        }
 
         /* MAIN CONTENT */
         .container {
@@ -72,10 +80,9 @@
             padding: var(--section-padding);
         }
 
-        .section-intro {
-            margin-bottom: 2.5rem;
-            border-bottom: 2px solid var(--sage-green);
-            padding-bottom: 0.8rem;
+       .section-intro h2 { 
+            color: var(--deep-forest); 
+            font-size: clamp(1.4rem, 5vw, 1.8rem); /* Responsive heading */
         }
 
         .section-intro h2 { color: var(--deep-forest); }
@@ -83,7 +90,7 @@
         /* RESOURCE GRIDS */
         .resource-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller min for mobile */
             gap: 2rem;
             margin-bottom: 4rem;
         }
@@ -98,7 +105,11 @@
             justify-content: space-between;
         }
 
-        .resource-card h3 { color: var(--earth-brown); margin-bottom: 0.8rem; }
+        .resource-card h3 { 
+            color: var(--earth-brown); 
+            margin-bottom: 0.8rem; 
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+        }
         .resource-card p { font-size: 0.95rem; margin-bottom: 1.5rem; color: #555; }
 
         .btn {
@@ -119,7 +130,7 @@
         footer {
             background: var(--deep-forest);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem; /* Reduced padding on mobile */
             margin-top: 4rem;
         }
 
@@ -144,6 +155,55 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
             opacity: 0.6;
+        }
+        /* --- MOBILE OPTIMIZATIONS --- */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 2rem 1rem; /* Less padding on mobile */
+            }
+
+            nav {
+                gap: 0.8rem 1.2rem; /* Tighter spacing */
+                padding: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.75rem; /* Slightly smaller text */
+                letter-spacing: 1px;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+                gap: 1.5rem;
+            }
+
+            .resource-card {
+                padding: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr; /* Stack footer columns */
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.7rem;
+                letter-spacing: 0.5px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
